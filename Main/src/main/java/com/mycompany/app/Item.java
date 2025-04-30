@@ -2,9 +2,11 @@ package com.mycompany.app;
 
 public class Item {
     public String name;
-
-    public Item(String name) {
+    public Weight weight;
+    
+    public Item(String name, Weight weight) {
         this.name = name;
+        this.weight = weight;
     }
 
     @Override
@@ -12,6 +14,7 @@ public class Item {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((name == null) ? 0 : name.hashCode());
+        result = prime * result + ((weight == null) ? 0 : weight.hashCode());
         return result;
     }
 
@@ -29,7 +32,14 @@ public class Item {
                 return false;
         } else if (!name.equals(other.name))
             return false;
+        if (weight != other.weight)
+            return false;
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Item [name=" + name + ", weight=" + weight + "]";
     }
 
     public String getName() {
@@ -40,8 +50,11 @@ public class Item {
         this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return "Item [name=" + name + "]";
+    public Weight getWeight() {
+        return weight;
+    }
+
+    public void setWeight(Weight weight) {
+        this.weight = weight;
     }
 }

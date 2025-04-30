@@ -69,4 +69,5 @@ public class Character {
     public void setGender(Gender gender) {
         this.gender = gender;
     }
+
 }
