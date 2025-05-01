@@ -1,0 +1,1 @@
+Character [age = 34, name = bnuhyd]

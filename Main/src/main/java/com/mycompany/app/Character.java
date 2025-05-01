@@ -6,7 +6,7 @@ public class Character {
 
     public Character() {
         this.age = 0;
-        this.name = "";
+        this.name = null;
     }
 
     public Character(int age, String name) {
@@ -44,7 +44,7 @@ public class Character {
 
     @Override
     public String toString() {
-        return "Character [age=" + age + ", name=" + name + "]";
+        return "Character [age = " + age + ", name = " + name + "]";
     }
 
     public int getAge() {
