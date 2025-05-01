@@ -2,7 +2,7 @@ package com.mycompany.app;
 
 public class Item {
     public String name;
-    public enum weight {HEAVY, MODERATE, LIGHT};
+    public enum Weight {HEAVY, MODERATE, LIGHT};
     
     public Item(String name) {
         this.name = name;

@@ -9,4 +9,9 @@ public class Swordsman extends Character {
     public Swordsman(int age, String name) {
         super(age, name);
     }
+
+    @Override
+    public String toString() {
+        return "Swordsman " + super.toString();
+    }
 }

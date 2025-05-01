@@ -2,7 +2,9 @@ package com.mycompany.app;
 public class Character {
     public int age;
     public String name;
-    public enum gender {MALE, FEMALE};
+
+    public enum Gender {MALE, FEMALE};
+    private Gender gender;
 
     public Character() {
         this.age = 0;
@@ -44,7 +46,7 @@ public class Character {
 
     @Override
     public String toString() {
-        return "Character [age = " + age + ", name = " + name + "]";
+        return "[age = " + age + ", name = " + name + ", gender = " + gender + "]";
     }
 
     public int getAge() {
@@ -61,5 +63,9 @@ public class Character {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
     }
 }

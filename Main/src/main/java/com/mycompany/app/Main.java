@@ -13,7 +13,7 @@ public class Main {
             System.out.print("\n" +
     " _____________________________________________________________________ \n" +
     "/                                                                     \\\n" +
-    "|   * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * |\n" +
+    "|   * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  |\n" +
     "|   *                                                               *  |\n" +
     "|   *      ███╗   ███╗ █████╗  ██████╗ ███████╗                     *  |\n" +
     "|   *      ████╗ ████║██╔══██╗██╔════╝ ██╔════╝                     *  |\n" +
@@ -60,12 +60,27 @@ public class Main {
                 };
                 
                 if (character != null) {
-                    System.out.print("what is the name of your character?: ");
+                    System.out.print("\nwhat is the name of your character?: ");
                     character.setName(input.next());
 
                     input.nextLine();
 
-                    System.out.print("how old is your character?: ");
+                    System.out.print("\nwhat is the gender of your character?: ");
+                    while (true) {
+                        String genderInput = input.nextLine().toLowerCase();
+                        
+                        if ("male".equals(genderInput)) {
+                            character.setGender(Character.Gender.MALE);
+                            break;
+                        } else if ("female".equals(genderInput)) {
+                            character.setGender(Character.Gender.FEMALE);
+                            break;
+                        } else {
+                            System.out.print("\nplease enter either male or female: ");
+                        }
+                    }
+
+                    System.out.print("\nhow old is your character?: ");
                     character.setAge(input.nextInt());
 
                     try (FileWriter fw = new FileWriter("Characters.txt")) {
@@ -76,10 +91,8 @@ public class Main {
 
                     break;
                 }
-                System.out.println("please choose one of the options listed\n");
+                System.out.print("\nplease choose one of the options listed: ");
             }
-
-            
         }
     }
 }

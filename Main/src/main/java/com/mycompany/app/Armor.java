@@ -1,7 +1,7 @@
 package com.mycompany.app;
 
 abstract class Armor extends Item implements Wearable {
-    public enum defense {WEAK, MODERATE, STRONG};
+    public enum Defense {WEAK, MODERATE, STRONG};
 
     public Armor(String name) {
         super(name);

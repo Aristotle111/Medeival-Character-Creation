@@ -8,4 +8,9 @@ public class Archer extends Character {
     public Archer(int age, String name) {
         super(age, name);
     }
+
+    @Override
+    public String toString() {
+        return "Archer " + super.toString();
+    }
 }
