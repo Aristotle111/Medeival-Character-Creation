@@ -1,6 +1,6 @@
 package com.mycompany.app;
 
-public class Weapon extends Item implements Weildable {
+abstract class Weapon extends Item implements Weildable {
     public enum damage {WEAK, MODERATE, STRONG};
 
     public Weapon(String name) {
@@ -10,5 +10,10 @@ public class Weapon extends Item implements Weildable {
     @Override
     public String toString() {
         return "Weapon [name=" + name + "]";
+    }
+
+    @Override
+    public void weild() {
+        
     }
 }

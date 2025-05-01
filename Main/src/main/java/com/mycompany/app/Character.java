@@ -4,6 +4,11 @@ public class Character {
     public String name;
     public enum gender {MALE, FEMALE};
 
+    public Character() {
+        this.age = 0;
+        this.name = "";
+    }
+
     public Character(int age, String name) {
         this.age = age;
         this.name = name;
