@@ -2,12 +2,11 @@ package com.mycompany.app;
 public class Character {
     public int age;
     public String name;
-    public Gender gender;
+    public enum gender {MALE, FEMALE};
 
-    public Character(int age, String name, Gender gender) {
+    public Character(int age, String name) {
         this.age = age;
         this.name = name;
-        this.gender = gender;
     }
 
     @Override
@@ -16,7 +15,6 @@ public class Character {
         int result = 1;
         result = prime * result + age;
         result = prime * result + ((name == null) ? 0 : name.hashCode());
-        result = prime * result + ((gender == null) ? 0 : gender.hashCode());
         return result;
     }
 
@@ -36,14 +34,12 @@ public class Character {
                 return false;
         } else if (!name.equals(other.name))
             return false;
-        if (gender != other.gender)
-            return false;
         return true;
     }
 
     @Override
     public String toString() {
-        return "Character [age=" + age + ", name=" + name + ", gender=" + gender + "]";
+        return "Character [age=" + age + ", name=" + name + "]";
     }
 
     public int getAge() {
@@ -61,13 +57,4 @@ public class Character {
     public void setName(String name) {
         this.name = name;
     }
-
-    public Gender getGender() {
-        return gender;
-    }
-
-    public void setGender(Gender gender) {
-        this.gender = gender;
-    }
-
 }
