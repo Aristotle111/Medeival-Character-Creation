@@ -1,12 +1,10 @@
 package com.mycompany.app;
 
-import java.util.List;
-
 public class Character {
     public int age;
     public String name;
-    public List<Armor> armor;
-    public List<Weapon> weapons;
+    public Armor armor;
+    public Weapon weapon;
     public Gender gender;
 
     public enum Gender {MALE, FEMALE};
@@ -16,7 +14,7 @@ public class Character {
         this.age = 0;
         this.gender = null;
         this.armor = null;
-        this.weapons = null;
+        this.weapon = null;
     }
 
     public Character(int age, String name) {
@@ -24,12 +22,12 @@ public class Character {
         this.name = name;
     }
 
-    public Character(int age, String name, List<Armor> armor, Gender gender, List<Weapon> weapons) {
+    public Character(int age, String name, Armor armor, Gender gender, Weapon weapon) {
         this.age = age;
         this.name = name;
         this.armor = armor;
         this.gender = gender;
-        this.weapons = weapons;
+        this.weapon = weapon;
     }
 
     @Override
@@ -62,7 +60,7 @@ public class Character {
 
     @Override
     public String toString() {
-        return "[age = " + age + ", name = " + name + ", armor = " + armor + ", weapons = " + weapons + ", gender = "
+        return "[age = " + age + ", name = " + name + ", armor = " + armor + ", weapons = " + weapon + ", gender = "
                 + gender + "]";
     }
 
@@ -90,11 +88,19 @@ public class Character {
         this.gender = gender;
     }
 
-    public List<Armor> getArmor() {
+    public Armor getArmor() {
         return armor;
     }
 
-    public void setArmor(List<Armor> armor) {
+    public void setArmor(Armor armor) {
         this.armor = armor;
+    }
+
+    public Weapon getWeapon() {
+        return weapon;
+    }
+
+    public void setWeapon(Weapon weapon) {
+        this.weapon = weapon;
     }
 }

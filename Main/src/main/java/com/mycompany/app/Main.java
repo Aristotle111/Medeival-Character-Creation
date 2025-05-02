@@ -3,13 +3,14 @@ package com.mycompany.app;
 import java.io.FileWriter;
 import java.util.Scanner;
 
+import com.mycompany.app.Weapon.Damage;
+
 public class Main {
     public static void main(String[] args) {
-        Character character = new Character();
-        characterSetup(character);
+        characterSetup();
     }
 
-    public static void characterSetup(Character character) {
+    public static void characterSetup() {
         try (Scanner input = new Scanner(System.in)) {
             System.out.print("\n" +
     " _____________________________________________________________________ \n" +
@@ -50,7 +51,7 @@ public class Main {
     "\\_____________________________________________________________________/\n" +
     "\nChoose your destiny Mage, Archer, or Swordsman: ");
             while (true) {
-                character = switch (input.next().toLowerCase()) {
+                Character character = switch (input.next().toLowerCase()) {
                     case "swordsman" ->
                         new Swordsman();
                     case "mage" ->
@@ -87,13 +88,77 @@ public class Main {
                     try (FileWriter fw = new FileWriter("Characters.txt")) {
                         fw.write(character.toString());
                     } catch (Exception e) {
+                        System.out.println("something went wrong, please try again");
                         e.printStackTrace();
                     }
-
+                    pickWeapon(character);
                     break;
                 }
                 System.out.print("\nplease choose one of the options listed: ");
             }
+        }
+    }
+
+    public static void pickWeapon(Character character) {
+        try (Scanner input = new Scanner(System.in)) {
+            if (character instanceof Mage) {
+                //sout
+                while (true) {
+                    String weaponChoice = input.nextLine().toLowerCase();
+                    
+                    if ("".equals(weaponChoice)) {
+                        character.setWeapon(new Weapon("", Item.Weight.LIGHT, Damage.WEAK));
+                        break;
+                    } else if ("".equals(weaponChoice)) {
+                        character.setWeapon(new Weapon("", Item.Weight.MODERATE, Damage.MODERATE));
+                        break;
+                    } else if ("".equals(weaponChoice)) {
+                        character.setWeapon(new Weapon("", Item.Weight.HEAVY, Damage.STRONG));
+                        break;
+                    } else {
+                        System.out.print("\nplease choose one of the options listed: ");
+                    }
+                }
+            } else if (character instanceof Archer) {
+                //sout
+                while (true) {
+                    String weaponChoice = input.nextLine().toLowerCase();
+                    
+                    if ("".equals(weaponChoice)) {
+                        character.setWeapon(new Weapon("", Item.Weight.LIGHT, Damage.WEAK));
+                        break;
+                    } else if ("".equals(weaponChoice)) {
+                        character.setWeapon(new Weapon("", Item.Weight.MODERATE, Damage.MODERATE));
+                        break;
+                    } else if ("".equals(weaponChoice)) {
+                        character.setWeapon(new Weapon("", Item.Weight.HEAVY, Damage.STRONG));
+                        break;
+                    } else {
+                        System.out.print("\nplease choose one of the options listed: ");
+                    }
+                }
+            } else if (character instanceof Swordsman) {
+                //sout
+                while (true) {
+                    String weaponChoice = input.nextLine().toLowerCase();
+                    
+                    if ("".equals(weaponChoice)) {
+                        character.setWeapon(new Weapon("", Item.Weight.LIGHT, Damage.WEAK));
+                        break;
+                    } else if ("".equals(weaponChoice)) {
+                        character.setWeapon(new Weapon("", Item.Weight.MODERATE, Damage.MODERATE));
+                        break;
+                    } else if ("".equals(weaponChoice)) {
+                        character.setWeapon(new Weapon("", Item.Weight.HEAVY, Damage.STRONG));
+                        break;
+                    } else {
+                        System.out.print("\nplease choose one of the options listed: ");
+                    }
+                }
+            } 
+        } catch (Exception e) {
+            System.out.println("something went wrong, please try again");
+            e.printStackTrace();
         }
     }
 }

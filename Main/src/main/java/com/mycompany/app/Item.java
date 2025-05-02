@@ -5,9 +5,15 @@ public abstract class Item extends Character {
     public Weight weight;
 
     public enum Weight {HEAVY, MODERATE, LIGHT};
-    
-    public Item(String name) {
-        this.name = name;
+
+    public Item() {
+        this.nameOfItem = null;
+        this.weight = null;
+    }
+
+    public Item(String nameOfItem, Weight weight) {
+        this.nameOfItem = nameOfItem;
+        this.weight = weight;
     }
 
     @Override
@@ -37,7 +43,7 @@ public abstract class Item extends Character {
 
     @Override
     public String toString() {
-        return "[name=" + name + ", weight=" + weight + "]";
+        return "[name = " + name + ", weight = " + weight + "]";
     }
 
     public String getNameOfItem() {
