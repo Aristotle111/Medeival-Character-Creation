@@ -5,10 +5,11 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        characterSetup();
+        Character character = new Character();
+        characterSetup(character);
     }
 
-    public static void characterSetup() {
+    public static void characterSetup(Character character) {
         try (Scanner input = new Scanner(System.in)) {
             System.out.print("\n" +
     " _____________________________________________________________________ \n" +
@@ -49,7 +50,7 @@ public class Main {
     "\\_____________________________________________________________________/\n" +
     "\nChoose your destiny Mage, Archer, or Swordsman: ");
             while (true) {
-                Character character = switch (input.next().toLowerCase()) {
+                character = switch (input.next().toLowerCase()) {
                     case "swordsman" ->
                         new Swordsman();
                     case "mage" ->

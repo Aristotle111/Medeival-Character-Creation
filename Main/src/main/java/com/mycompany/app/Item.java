@@ -1,7 +1,9 @@
 package com.mycompany.app;
 
-public class Item {
-    public String name;
+public abstract class Item extends Character {
+    public String nameOfItem;
+    public Weight weight;
+
     public enum Weight {HEAVY, MODERATE, LIGHT};
     
     public Item(String name) {
@@ -35,14 +37,22 @@ public class Item {
 
     @Override
     public String toString() {
-        return "Item [name=" + name + "]";
+        return "[name=" + name + ", weight=" + weight + "]";
     }
 
-    public String getName() {
-        return name;
+    public String getNameOfItem() {
+        return nameOfItem;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNameOfItem(String nameOfItem) {
+        this.nameOfItem = nameOfItem;
+    }
+
+    public Weight getWeight() {
+        return weight;
+    }
+
+    public void setWeight(Weight weight) {
+        this.weight = weight;
     }
 }
