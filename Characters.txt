@@ -1,1 +1,1 @@
-Mage [age = 34, name = fjhf, armor = null, weapons = null, gender = MALE]
+Mage [age = 3, name = mmaaaage, armor = null, weapons = null, gender = FEMALE]

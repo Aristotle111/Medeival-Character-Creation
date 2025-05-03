@@ -6,13 +6,45 @@ import java.util.Scanner;
 import com.mycompany.app.Weapon.Damage;
 
 public class Main {
+    private static final Scanner input = new Scanner(System.in);
     public static void main(String[] args) {
+        userSetup();
         characterSetup();
+        input.close();
+    }
+
+    public static void userSetup() {
+        System.out.print("\n" +
+        "  ╔════════════════════════════════════════════════╗\n" +
+        "  ║                                                ║\n" +
+        "  ║      ███╗   ███╗███████╗██████╗ ██╗███████╗    ║\n" +
+        "  ║      ████╗ ████║██╔════╝██╔══██╗██║██╔════╝    ║\n" +
+        "  ║      ██╔████╔██║█████╗  ██║  ██║██║█████╗      ║\n" +
+        "  ║      ██║╚██╔╝██║██╔══╝  ██║  ██║██║██╔══╝      ║\n" +
+        "  ║      ██║ ╚═╝ ██║███████╗██████╔╝██║██║         ║\n" +
+        "  ║      ╚═╝     ╚═╝╚══════╝╚═════╝ ╚═╝╚═╝         ║\n" +
+        "  ║                                                ║\n" +
+        "  ║           )   CHARACTER CREATION   (           ║\n" +
+        "  ║                                                ║\n" +
+        "  ║   \"The anvil of destiny awaits your strike\"    ║\n" +
+        "  ║                                                ║\n" +
+        "  ╚════════════════════════════════════════════════╝\n");
+
+        System.out.print("\n Declare yourself, wanderer: ");
+        String username = input.nextLine().trim();
+            
+        while (username.isEmpty()) {
+            System.out.print("\nA name is required, brave one. Try again: ");
+            username = input.nextLine().trim();
+        }
+        
+        User user = new User();
+        user.setUsername(username);
+        System.out.println("\nWelcome, " + username + "! Your journey begins...");
     }
 
     public static void characterSetup() {
-        try (Scanner input = new Scanner(System.in)) {
-            System.out.print("\n" +
+        System.out.print("\n" +
     " _____________________________________________________________________ \n" +
     "/                                                                     \\\n" +
     "|   * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  |\n" +
@@ -50,115 +82,108 @@ public class Main {
     "|   * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  |\n" +
     "\\_____________________________________________________________________/\n" +
     "\nChoose your destiny Mage, Archer, or Swordsman: ");
-            while (true) {
-                Character character = switch (input.next().toLowerCase()) {
-                    case "swordsman" ->
-                        new Swordsman();
-                    case "mage" ->
-                        new Mage();
-                    case "archer" ->
-                        new Archer();
-                    default -> null;
-                };
-                
-                if (character != null) {
-                    System.out.print("\nwhat is the name of your character?: ");
-                    character.setName(input.next());
-
-                    input.nextLine();
-
-                    System.out.print("\nwhat is the gender of your character?: ");
-                    while (true) {
-                        String genderInput = input.nextLine().toLowerCase();
-                        
-                        if ("male".equals(genderInput)) {
-                            character.setGender(Character.Gender.MALE);
-                            break;
-                        } else if ("female".equals(genderInput)) {
-                            character.setGender(Character.Gender.FEMALE);
-                            break;
-                        } else {
-                            System.out.print("\nplease enter either male or female: ");
-                        }
-                    }
-
-                    System.out.print("\nhow old is your character?: ");
-                    character.setAge(input.nextInt());
-
-                    try (FileWriter fw = new FileWriter("Characters.txt")) {
-                        fw.write(character.toString());
-                    } catch (Exception e) {
-                        System.out.println("something went wrong, please try again");
-                        e.printStackTrace();
-                    }
-                    pickWeapon(character);
-                    break;
-                }
-                System.out.print("\nplease choose one of the options listed: ");
+    
+        Character character = null;
+        while (character == null) {
+            String choice = input.nextLine().trim().toLowerCase();
+            switch (choice) {
+                case "swordsman" -> character = new Swordsman();
+                case "mage" -> character = new Mage();
+                case "archer" -> character = new Archer();
+                default -> System.out.print("Please choose one of the options listed: ");
             }
         }
+                
+        System.out.print("\nWhat is the name of your character?: ");
+        character.setName(input.nextLine());
+
+        System.out.print("\nWhat is the gender of your character (male/female)?: ");
+        while (true) {
+            String genderInput = input.nextLine().trim().toLowerCase();
+            if (genderInput.equals("male")) {
+                character.setGender(Character.Gender.MALE);
+                break;
+            } else if (genderInput.equals("female")) {
+                character.setGender(Character.Gender.FEMALE);
+                break;
+            }
+            System.out.print("Please enter either male or female: ");
+        }
+
+        System.out.print("\nHow old is your character?: "); 
+        while (!input.hasNextInt()) {
+            System.out.print("Please enter a valid number: ");
+            input.next(); // consume invalid input
+        }
+        character.setAge(input.nextInt());
+        input.nextLine(); // consume newline
+
+        try (FileWriter fw = new FileWriter("Characters.txt")) {
+            fw.write(character.toString());
+        } catch (Exception e) {
+            System.out.println("Failed to save character. Please try again.");
+            characterSetup();
+            return;
+        }
+
+        pickWeapon(character);
     }
 
     public static void pickWeapon(Character character) {
-        try (Scanner input = new Scanner(System.in)) {
-            if (character instanceof Mage) {
-                //sout
-                while (true) {
-                    String weaponChoice = input.nextLine().toLowerCase();
+        if (character instanceof Mage) {
+            //sout
+            while (true) {
+                String weaponChoice = input.nextLine().toLowerCase();
                     
-                    if ("".equals(weaponChoice)) {
-                        character.setWeapon(new Weapon("", Item.Weight.LIGHT, Damage.WEAK));
-                        break;
-                    } else if ("".equals(weaponChoice)) {
-                        character.setWeapon(new Weapon("", Item.Weight.MODERATE, Damage.MODERATE));
-                        break;
-                    } else if ("".equals(weaponChoice)) {
-                        character.setWeapon(new Weapon("", Item.Weight.HEAVY, Damage.STRONG));
-                        break;
-                    } else {
-                        System.out.print("\nplease choose one of the options listed: ");
-                    }
+                if ("".equals(weaponChoice)) {
+                    character.setWeapon(new Weapon("", Item.Weight.LIGHT, Damage.WEAK));
+                    break;
+                } else if ("".equals(weaponChoice)) {
+                    character.setWeapon(new Weapon("", Item.Weight.MODERATE, Damage.MODERATE));
+                    break;
+                } else if ("".equals(weaponChoice)) {
+                    character.setWeapon(new Weapon("", Item.Weight.HEAVY, Damage.STRONG));
+                    break;
+                } else {
+                    System.out.print("\nplease choose one of the options listed: ");
                 }
-            } else if (character instanceof Archer) {
-                //sout
-                while (true) {
-                    String weaponChoice = input.nextLine().toLowerCase();
+            }
+        } else if (character instanceof Archer) {
+            //sout
+            while (true) {
+                String weaponChoice = input.nextLine().toLowerCase();
                     
-                    if ("".equals(weaponChoice)) {
-                        character.setWeapon(new Weapon("", Item.Weight.LIGHT, Damage.WEAK));
-                        break;
-                    } else if ("".equals(weaponChoice)) {
-                        character.setWeapon(new Weapon("", Item.Weight.MODERATE, Damage.MODERATE));
-                        break;
-                    } else if ("".equals(weaponChoice)) {
-                        character.setWeapon(new Weapon("", Item.Weight.HEAVY, Damage.STRONG));
-                        break;
-                    } else {
-                        System.out.print("\nplease choose one of the options listed: ");
-                    }
+                if ("".equals(weaponChoice)) {
+                    character.setWeapon(new Weapon("", Item.Weight.LIGHT, Damage.WEAK));
+                    break;
+                } else if ("".equals(weaponChoice)) {
+                    character.setWeapon(new Weapon("", Item.Weight.MODERATE, Damage.MODERATE));
+                    break;
+                } else if ("".equals(weaponChoice)) {
+                    character.setWeapon(new Weapon("", Item.Weight.HEAVY, Damage.STRONG));
+                    break;
+                } else {
+                    System.out.print("\nplease choose one of the options listed: ");
                 }
-            } else if (character instanceof Swordsman) {
-                //sout
-                while (true) {
-                    String weaponChoice = input.nextLine().toLowerCase();
+            }
+        } else if (character instanceof Swordsman) {
+            //sout
+            while (true) {
+                String weaponChoice = input.nextLine().toLowerCase();
                     
-                    if ("".equals(weaponChoice)) {
-                        character.setWeapon(new Weapon("", Item.Weight.LIGHT, Damage.WEAK));
-                        break;
-                    } else if ("".equals(weaponChoice)) {
-                        character.setWeapon(new Weapon("", Item.Weight.MODERATE, Damage.MODERATE));
-                        break;
-                    } else if ("".equals(weaponChoice)) {
-                        character.setWeapon(new Weapon("", Item.Weight.HEAVY, Damage.STRONG));
-                        break;
-                    } else {
-                        System.out.print("\nplease choose one of the options listed: ");
-                    }
+                if ("".equals(weaponChoice)) {
+                    character.setWeapon(new Weapon("", Item.Weight.LIGHT, Damage.WEAK));
+                    break;
+                } else if ("".equals(weaponChoice)) {
+                    character.setWeapon(new Weapon("", Item.Weight.MODERATE, Damage.MODERATE));
+                    break;
+                } else if ("".equals(weaponChoice)) {
+                    character.setWeapon(new Weapon("", Item.Weight.HEAVY, Damage.STRONG));
+                    break;
+                } else {
+                    System.out.print("\nplease choose one of the options listed: ");
                 }
-            } 
-        } catch (Exception e) {
-            System.out.println("something went wrong, please try again");
-            e.printStackTrace();
-        }
+            }
+        } 
     }
 }

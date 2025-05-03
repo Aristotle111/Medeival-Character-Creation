@@ -1,6 +1,6 @@
 package com.mycompany.app;
 
-public class Character {
+public class Character extends User implements Comparable<Character> {
     public int age;
     public String name;
     public Armor armor;
@@ -102,5 +102,10 @@ public class Character {
 
     public void setWeapon(Weapon weapon) {
         this.weapon = weapon;
+    }
+
+    @Override
+    public int compareTo(Character o) {
+        return this.age - o.getAge();
     }
 }
