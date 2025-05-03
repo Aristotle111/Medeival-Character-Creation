@@ -1,1 +1,12 @@
-Mage [age = 2, name = sfjh, armor = null, weapons = null, gender = MALE]
+Swordsman 
+[ age = 3 ]
+[ name = aris ]
+[ armor = null ]
+[ weapon = [name = Zweihander, weight = HEAVY]
+|                />                                            |
+|   ()          //-----------------------------------(         |
+|  (*)OXOXOXOXO(*>      --------------------         \         |
+|   ()          \-------------------------------------)        |
+|                \>                                            |
+
+[ gender = MALE]

@@ -60,8 +60,8 @@ public class Character extends User implements Comparable<Character> {
 
     @Override
     public String toString() {
-        return "[age = " + age + ", name = " + name + ", armor = " + armor + ", weapons = " + weapon + ", gender = "
-                + gender + "]";
+        return "\n[ name = " + name + " ]\n" + "[ age = " + age + " ]\n" + "[ gender = "
+        + gender + "]" + "[ armor = " + armor + " ]\n" + "[ weapon = " + weapon + "\n";
     }
 
     public int getAge() {

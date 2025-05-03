@@ -43,7 +43,7 @@ public abstract class Item extends Character {
 
     @Override
     public String toString() {
-        return "[name = " + name + ", weight = " + weight + "]";
+        return "[name = " + nameOfItem + ", weight = " + weight + "]";
     }
 
     public String getNameOfItem() {

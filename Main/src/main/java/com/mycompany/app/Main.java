@@ -8,9 +8,10 @@ import com.mycompany.app.Weapon.Damage;
 public class Main {
     private static final Scanner input = new Scanner(System.in);
     public static void main(String[] args) {
-        userSetup();
-        characterSetup();
-        input.close();
+        try (input) {
+            userSetup();
+            characterSetup();
+        }
     }
 
     public static void userSetup() {
@@ -113,18 +114,10 @@ public class Main {
         System.out.print("\nHow old is your character?: "); 
         while (!input.hasNextInt()) {
             System.out.print("Please enter a valid number: ");
-            input.next(); // consume invalid input
+            input.next();
         }
         character.setAge(input.nextInt());
-        input.nextLine(); // consume newline
-
-        try (FileWriter fw = new FileWriter("Characters.txt")) {
-            fw.write(character.toString());
-        } catch (Exception e) {
-            System.out.println("Failed to save character. Please try again.");
-            characterSetup();
-            return;
-        }
+        input.nextLine();
 
         pickWeapon(character);
     }
@@ -132,54 +125,54 @@ public class Main {
     public static void pickWeapon(Character character) {
         if (character instanceof Mage) {
             System.out.print("\n" +
-    " ______________________________________________________________________\n" +
-    "/                                                                      \\\n" +
-    "|                         ~ MAGICAL ARTIFACTS ~                        |\n" +
-    "|______________________________________________________________________|\n" +
-    "|                                                                      |\n" +
-    "|  [1] PHANTOM SHIV (Light)                                            |\n" +
-    "|                                                                      |\n" +
-    "|           /| ____________                                            |\n" +
-    "|       O|===|* >____________>                                         |\n" +
-    "|          \\|                                                          |\n" +
-    "|                                                                      |\n" +
-    "|  [2] OBSCURE TOME (Moderate)                                         |\n" +
-    "|                                                                      |\n" +
-    "|       ______                                                         |\n" +
-    "|      /     /|                                                        |\n" +
-    "|     /_____/ |                                                        |\n" +
-    "|    |     |  |                                                        |\n" +
-    "|    |     |  |                                                        |\n" +
-    "|    |_____|  |                                                        |\n" +
-    "|    |     |  |                                                        |\n" +
-    "|    |     |  /                                                        |\n" +
-    "|    |_____| /                                                         |\n" +
-    "|    (_____(/                                                          |\n" +
-    "|                                                                      |\n" +
-    "|  [3] ELDRITCH STAFF (Heavy)                                          |\n" +
-    "|                                                                      |\n" +
-    "|       \\ .,||,. /                                                     |\n" +
-    "|        \\'║║║║'/                                                      |\n" +
-    "|    =--+=║║██║║=+--=                                                  |\n" +
-    "|         /║║║║\\                                                       |\n" +
-    "|        /  ||  \\                                                      |\n" +
-    "|           ||                                                         |\n" +
-    "|           ||                                                         |\n" +
-    "|           ||                                                         |\n" +
-    "|           ||                                                         |\n" +
-    "|           ||                                                         |\n" +
-    "|           ||                                                         |\n" +
-    "|           ||                                                         |\n" +
-    "|           ||                                                         |\n" +
-    "|           ||                                                         |\n" +
-    "|           ||                                                         |\n" +
-    "|           ||                                                         |\n" +
-    "|                                                                      |\n" +
-    "|______________________________________________________________________|\n" +
-    "|                                                                      |\n" +
-    "| 1. Cursed Dagger  2. Forbidden Tome  3. Eldritch Staff               |\n" +
-    "|______________________________________________________________________|\n" +
-    "\\______________________________________________________________________/\n" +
+    " __________________________________________________________________\n" +
+    "/                                                                  \\\n" +
+    "|                      ~ MAGICAL ARTIFACTS ~                       |\n" +
+    "|__________________________________________________________________|\n" +
+    "|                                                                  |\n" +
+    "|  [1] PHANTOM SHIV (Light)                                        |\n" +
+    "|                                                                  |\n" +
+    "|           /| ____________                                        |\n" +
+    "|       O|===|* >____________>                                     |\n" +
+    "|           \\|                                                     |\n" +
+    "|                                                                  |\n" +
+    "|  [2] OBSCURE TOME (Moderate)                                     |\n" +
+    "|                                                                  |\n" +
+    "|       ______                                                     |\n" +
+    "|      /     /|                                                    |\n" +
+    "|     /_____/ |                                                    |\n" +
+    "|    |     |  |                                                    |\n" +
+    "|    |     |  |                                                    |\n" +
+    "|    |_____|  |                                                    |\n" +
+    "|    |     |  |                                                    |\n" +
+    "|    |     |  /                                                    |\n" +
+    "|    |_____| /                                                     |\n" +
+    "|    (_____(/                                                      |\n" +
+    "|                                                                  |\n" +
+    "|  [3] ELDRITCH STAFF (Heavy)                                      |\n" +
+    "|                                                                  |\n" +
+    "|       \\ .,||,. /                                                 |\n" +
+    "|        \\'║║║║'/                                                  |\n" +
+    "|    =--+=║║██║║=+--=                                              |\n" +
+    "|         /║║║║\\                                                   |\n" +
+    "|        /  ||  \\                                                  |\n" +
+    "|           ||                                                     |\n" +
+    "|           ||                                                     |\n" +
+    "|           ||                                                     |\n" +
+    "|           ||                                                     |\n" +
+    "|           ||                                                     |\n" +
+    "|           ||                                                     |\n" +
+    "|           ||                                                     |\n" +
+    "|           ||                                                     |\n" +
+    "|           ||                                                     |\n" +
+    "|           ||                                                     |\n" +
+    "|           ||                                                     |\n" +
+    "|                                                                  |\n" +
+    "|__________________________________________________________________|\n" +
+    "|                                                                  |\n" +
+    "| 1. Cursed Dagger  2. Forbidden Tome  3. Eldritch Staff           |\n" +
+    "|__________________________________________________________________|\n" +
+    "\\__________________________________________________________________/\n" +
     "\nEnter your choice (1-3): "
 );
             OUTER:
@@ -187,15 +180,40 @@ public class Main {
                 int weaponChoice = input.nextInt();
                 switch (weaponChoice) {
                     case 1 -> {
-                        character.setWeapon(new Weapon("Cursed Dagger", Item.Weight.LIGHT, Damage.WEAK));
+                        character.setWeapon(new Weapon("Cursed Dagger", Item.Weight.LIGHT, Damage.WEAK, "\"|           /| ____________                                        |\\n" +
+                         "|       O|===|* >____________>                                     |\n" + "|           \\|                                                     |\n"));
                         break OUTER;
                     }
                     case 2 -> {
-                        character.setWeapon(new Weapon("Forbidden Tome", Item.Weight.MODERATE, Damage.MODERATE));
+                        character.setWeapon(new Weapon("Forbidden Tome", Item.Weight.MODERATE, Damage.MODERATE, "|       ______                                                     |\n" +
+    "|      /     /|                                                    |\n" +
+    "|     /_____/ |                                                    |\n" +
+    "|    |     |  |                                                    |\n" +
+    "|    |     |  |                                                    |\n" +
+    "|    |_____|  |                                                    |\n" +
+    "|    |     |  |                                                    |\n" +
+    "|    |     |  /                                                    |\n" +
+    "|    |_____| /                                                     |\n" +
+    "|    (_____(/                                                      |\n"));
                         break OUTER;
                     }
                     case 3 -> {
-                        character.setWeapon(new Weapon("Eldritch Staff", Item.Weight.HEAVY, Damage.STRONG));
+                        character.setWeapon(new Weapon("Eldritch Staff", Item.Weight.HEAVY, Damage.STRONG, "|       \\ .,||,. /                                                 |\n" +
+                            "|        \\'║║║║'/                                                  |\n" +
+                            "|    =--+=║║██║║=+--=                                              |\n" +
+                            "|         /║║║║\\                                                   |\n" +
+                            "|        /  ||  \\                                                  |\n" +
+                            "|           ||                                                     |\n" +
+                            "|           ||                                                     |\n" +
+                            "|           ||                                                     |\n" +
+                            "|           ||                                                     |\n" +
+                            "|           ||                                                     |\n" +
+                            "|           ||                                                     |\n" +
+                            "|           ||                                                     |\n" +
+                            "|           ||                                                     |\n" +
+                            "|           ||                                                     |\n" +
+                            "|           ||                                                     |\n" +
+                            "|           ||                                                     |\n"));
                         break OUTER;
                     }
                     default -> System.out.print("\nplease choose one of the options listed: ");
@@ -208,15 +226,15 @@ public class Main {
                 int weaponChoice = input.nextInt();
                 switch (weaponChoice) {
                     case 1 -> {
-                        character.setWeapon(new Weapon("", Item.Weight.LIGHT, Damage.WEAK));
+                        character.setWeapon(new Weapon("", Item.Weight.LIGHT, Damage.WEAK, ""));
                         break OUTER;
                     }
                     case 2 -> {
-                        character.setWeapon(new Weapon("", Item.Weight.MODERATE, Damage.MODERATE));
+                        character.setWeapon(new Weapon("", Item.Weight.MODERATE, Damage.MODERATE, ""));
                         break OUTER;
                     }
                     case 3 -> {
-                        character.setWeapon(new Weapon("", Item.Weight.HEAVY, Damage.STRONG));
+                        character.setWeapon(new Weapon("", Item.Weight.HEAVY, Damage.STRONG, ""));
                         break OUTER;
                     }
                     default -> System.out.print("\nplease choose one of the options listed: ");
@@ -225,55 +243,66 @@ public class Main {
         } else if (character instanceof Swordsman) {
             System.out.print(
             "\n" +
-            "  _______________________________________________________\n" +
-            " /                                                       \\\n" +
-            "|               ~ SELECT YOUR SWORD ~                     |\n" +
-            "|_________________________________________________________|\n" +
-            "|                                                         |\n" +
-            "|  [1] LIGHT                                              |\n" +
-            "|          //                                             |\n" +
-            "|  ()======>>=====================--                      |\n" +
-            "|          \\\\                                             |\n" +
-            "|                                                         |\n" +
-            "|  [2] MODERATE                                            |\n" +
-            "|           |\\                                            |\n" +
-            "|           | \\                                           |\n" +
-            "|  ()########|  =================================*        |\n" +
-            "|           | /                                           |\n" +
-            "|           |/                                            |\n" +
-            "|                                                         |\n" +
-            "|  [3] HEAVY                                              |\n" +
-            "|                />                                       |\n" +
-            "|   ()          //-----------------------------------(    |\n" +
-            "|  (*)OXOXOXOXO(*>      --------------------         \\    |\n" +
-            "|   ()          \\-------------------------------------)   |\n" +
-            "|                \\>                                       |\n" +
-            "|_________________________________________________________|\n" +
-            "|                                                         |\n" +
-            "| 1. Quick Dagger   2. Versatile Longsword                |\n" +
-            "| 3. Massive Zweihänder                                   |\n" +
-            "|_________________________________________________________|\n" +
-            "\\________________________________________________________/\n" +
+            "  ____________________________________________________________\n" +
+            " /                                                            \\\n" +
+            "|                    ~ SELECT YOUR SWORD ~                     |\n" +
+            "|______________________________________________________________|\n" +
+            "|                                                              |\n" +
+            "|  [1] LIGHT                                                   |\n" +
+            "|          //                                                  |\n" +
+            "|  ()======>>=====================--                           |\n" +
+            "|          \\\\                                                  |\n" +
+            "|                                                              |\n" +
+            "|  [2] MODERATE                                                |\n" +
+            "|           |\\                                                 |\n" +
+            "|           | \\                                                |\n" +
+            "|  ()########|  =================================*             |\n" +
+            "|           | /                                                |\n" +
+            "|           |/                                                 |\n" +
+            "|                                                              |\n" +
+            "|  [3] HEAVY                                                   |\n" +
+            "|                />                                            |\n" +
+            "|   ()          //-----------------------------------(         |\n" +
+            "|  (*)OXOXOXOXO(*>      --------------------         \\         |\n" +
+            "|   ()          \\-------------------------------------)        |\n" +
+            "|                \\>                                            |\n" +
+            "|______________________________________________________________|\n" +
+            "|                                                              |\n" +
+            "| 1. Quick Dagger   2. Versatile Longsword                     |\n" +
+            "| 3. Massive Zweihänder                                        |\n" +
+            "|______________________________________________________________|\n" +
+            "\\_____________________________________________________________/\n" +
             "\nEnter your choice (1-3): ");
             OUTER:
             while (true) {
                 int weaponChoice = input.nextInt();
                 switch (weaponChoice) {
                     case 1 -> {
-                        character.setWeapon(new Weapon("Shortsword", Item.Weight.LIGHT, Damage.WEAK));
+                        character.setWeapon(new Weapon("Shortsword", Item.Weight.LIGHT, Damage.WEAK, "|          //                                      |\n" +
+            "|  ()======>>=====================--               |\n" +
+            "|          \\\\                                      |\n"));
                         break OUTER;
                     }
                     case 2 -> {
-                        character.setWeapon(new Weapon("Rapier", Item.Weight.MODERATE, Damage.MODERATE));
+                        character.setWeapon(new Weapon("Rapier", Item.Weight.MODERATE, Damage.MODERATE, "|           |\\                                                 |\n" + 
+                        "|           | \\                                                |\n" + "|  ()########|  =================================*             |\n" +
+                        "|           | /                                                |\n" + "|           |/                                                 |\n"));
                         break OUTER;
                     }
                     case 3 -> {
-                        character.setWeapon(new Weapon("Zweihänder", Item.Weight.HEAVY, Damage.STRONG));
+                        character.setWeapon(new Weapon("Zweihander", Item.Weight.HEAVY, Damage.STRONG, "|                />                                            |\n" +
+                        "|   ()          //-----------------------------------(         |\n" + "|  (*)OXOXOXOXO(*>      --------------------         \\         |\n" +
+                        "|   ()          \\-------------------------------------)        |\n" + "|                \\>                                            |\n"));
                         break OUTER;
                     }
                     default -> System.out.print("\nplease choose one of the options listed: ");
                 }
             }
         } 
+        try (FileWriter fw = new FileWriter("Characters.txt")) {
+            fw.write(character.toString());
+        } catch (Exception e) {
+            System.out.println("Failed to run.");
+        }
     }
 }
