@@ -220,21 +220,104 @@ public class Main {
                 }
             }
         } else if (character instanceof Archer) {
-            //sout
+            System.out.print("\n" +
+    " ______________________________________________________________________\n" +
+    "/                                                                      \\\n" +
+    "|                         ~ ARCHERY WEAPONS ~                          |\n" +
+    "|______________________________________________________________________|\n" +
+    "|                                                                      |\n" +
+    "|  [1] LIGHT: Swiftstrike Bow                                          |\n" +
+    "|                                                                      |\n" +
+    "|       \\                                                              |\n" +
+    "|        \\                                                             |\n" +
+    "|         )                                                            |\n" +
+    "|    #===---->                                                         |\n" +
+    "|         )                                                            |\n" +
+    "|        /                                                             |\n" +
+    "|       /                                                              |\n" +
+    "|                                                                      |\n" +
+    "|  [2] MODERATE: Hunter's Recurve                                      |\n" +
+    "|                                                                      |\n" +
+    "|       (                                                              |\n" +
+    "|        \\\\                                                            |\n" +
+    "|         \\\\                                                           |\n" +
+    "|          \\\\                                                          |\n" +
+    "|           ))                                                         |\n" +
+    "|   ###===========>>                                                   |\n" +
+    "|           ))                                                         |\n" +
+    "|          //                                                          |\n" +
+    "|         //                                                           |\n" +
+    "|        //                                                            |\n" +
+    "|       (                                                              |\n" +
+    "|                                                                      |\n" +
+    "|  [3] HEAVY: Titan's War Bow                                          |\n" +
+    "|                                                                      |\n" +
+    "|                     \\.                                               |\n" + 
+    "|                  /   |.                                              |\n" + 
+    "|               /      '|.                                             |\n" + 
+    "|            /          |\\                                             |\n" + 
+    "|         /             ||                                             |\n" + 
+    "|       /               ||                                             |\n" +
+    "|    ||                 ||                                             |\n" + 
+    "|    || ================##==========>                                  |\n" + 
+    "|    ||                 ##                                             |\n" + 
+    "|      \\                ##                                             |\n" + 
+    "|          \\            ||                                             |\n" + 
+    "|             \\         ||                                             |\n" + 
+    "|                \\      ||                                             |\n" + 
+    "|                   \\   |/                                             |\n" + 
+    "|                      /.                                              |\n" +
+    "|                                                                      |\n" +
+    "|______________________________________________________________________|\n" +
+    "|                                                                      |\n" +
+    "| 1. Swiftstrike  2. Hunter's Recurve  3. Titan's War Bow              |\n" +
+    "|______________________________________________________________________|\n" +
+    "\\______________________________________________________________________/\n" +
+    "\nEnter your choice (1-3): ");
             OUTER:
             while (true) {
                 int weaponChoice = input.nextInt();
                 switch (weaponChoice) {
                     case 1 -> {
-                        character.setWeapon(new Weapon("", Item.Weight.LIGHT, Damage.WEAK, ""));
+                        character.setWeapon(new Weapon("Swiftstrike", Item.Weight.LIGHT, Damage.WEAK, "|       \\                                                              |\n" +
+                            "|        \\                                                             |\n" +
+                            "|         )                                                            |\n" +
+                            "|    #===---->                                                         |\n" +
+                            "|         )                                                            |\n" +
+                            "|        /                                                             |\n" +
+                            "|       /                                                              |\n"));
                         break OUTER;
                     }
                     case 2 -> {
-                        character.setWeapon(new Weapon("", Item.Weight.MODERATE, Damage.MODERATE, ""));
+                        character.setWeapon(new Weapon("Hunter's Recurve", Item.Weight.MODERATE, Damage.MODERATE, "|       (                                                              |\n" +
+    "|        \\\\                                                            |\n" +
+    "|         \\\\                                                           |\n" +
+    "|          \\\\                                                          |\n" +
+    "|           ))                                                         |\n" +
+    "|   ###===========>>                                                   |\n" +
+    "|           ))                                                         |\n" +
+    "|          //                                                          |\n" +
+    "|         //                                                           |\n" +
+    "|        //                                                            |\n" +
+    "|       (                                                              |\n"));
                         break OUTER;
                     }
                     case 3 -> {
-                        character.setWeapon(new Weapon("", Item.Weight.HEAVY, Damage.STRONG, ""));
+                        character.setWeapon(new Weapon("Titan's War Bow", Item.Weight.HEAVY, Damage.STRONG, "|                     \\.                                               |\n" + 
+                            "|                  /   |.                                              |\n" + 
+                            "|               /      '|.                                             |\n" + 
+                            "|            /          |\\                                             |\n" + 
+                            "|         /             ||                                             |\n" + 
+                            "|       /               ||                                             |\n" +
+                            "|    ||                 ||                                             |\n" + 
+                            "|    || ================##==========>                                  |\n" + 
+                            "|    ||                 ##                                             |\n" + 
+                            "|      \\                ##                                             |\n" + 
+                            "|          \\            ||                                             |\n" + 
+                            "|             \\         ||                                             |\n" + 
+                            "|                \\      ||                                             |\n" + 
+                            "|                   \\   |/                                             |\n" + 
+                            "|                      /.                                              |\n"));
                         break OUTER;
                     }
                     default -> System.out.print("\nplease choose one of the options listed: ");

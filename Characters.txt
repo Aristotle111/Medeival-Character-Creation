@@ -1,12 +1,21 @@
-Swordsman 
-[ age = 3 ]
-[ name = aris ]
-[ armor = null ]
-[ weapon = [name = Zweihander, weight = HEAVY]
-|                />                                            |
-|   ()          //-----------------------------------(         |
-|  (*)OXOXOXOXO(*>      --------------------         \         |
-|   ()          \-------------------------------------)        |
-|                \>                                            |
+Archer 
+[ name = maximus ]
+[ age = 23 ]
+[ gender = MALE][ armor = null ]
+[ weapon = [name = Titan's War Bow, weight = HEAVY]
+|                     \.                                               |
+|                  /   |.                                              |
+|               /      '|.                                             |
+|            /          |\                                             |
+|         /             ||                                             |
+|       /               ||                                             |
+|    ||                 ||                                             |
+|    || ================##==========>                                  |
+|    ||                 ##                                             |
+|      \                ##                                             |
+|          \            ||                                             |
+|             \         ||                                             |
+|                \      ||                                             |
+|                   \   |/                                             |
+|                      /.                                              |
 
-[ gender = MALE]
