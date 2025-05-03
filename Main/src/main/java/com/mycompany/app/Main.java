@@ -131,57 +131,147 @@ public class Main {
 
     public static void pickWeapon(Character character) {
         if (character instanceof Mage) {
-            //sout
+            System.out.print("\n" +
+    " ______________________________________________________________________\n" +
+    "/                                                                      \\\n" +
+    "|                         ~ MAGICAL ARTIFACTS ~                        |\n" +
+    "|______________________________________________________________________|\n" +
+    "|                                                                      |\n" +
+    "|  [1] PHANTOM SHIV (Light)                                            |\n" +
+    "|                                                                      |\n" +
+    "|           /| ____________                                            |\n" +
+    "|       O|===|* >____________>                                         |\n" +
+    "|          \\|                                                          |\n" +
+    "|                                                                      |\n" +
+    "|  [2] OBSCURE TOME (Moderate)                                         |\n" +
+    "|                                                                      |\n" +
+    "|       ______                                                         |\n" +
+    "|      /     /|                                                        |\n" +
+    "|     /_____/ |                                                        |\n" +
+    "|    |     |  |                                                        |\n" +
+    "|    |     |  |                                                        |\n" +
+    "|    |_____|  |                                                        |\n" +
+    "|    |     |  |                                                        |\n" +
+    "|    |     |  /                                                        |\n" +
+    "|    |_____| /                                                         |\n" +
+    "|    (_____(/                                                          |\n" +
+    "|                                                                      |\n" +
+    "|  [3] ELDRITCH STAFF (Heavy)                                          |\n" +
+    "|                                                                      |\n" +
+    "|       \\ .,||,. /                                                     |\n" +
+    "|        \\'║║║║'/                                                      |\n" +
+    "|    =--+=║║██║║=+--=                                                  |\n" +
+    "|         /║║║║\\                                                       |\n" +
+    "|        /  ||  \\                                                      |\n" +
+    "|           ||                                                         |\n" +
+    "|           ||                                                         |\n" +
+    "|           ||                                                         |\n" +
+    "|           ||                                                         |\n" +
+    "|           ||                                                         |\n" +
+    "|           ||                                                         |\n" +
+    "|           ||                                                         |\n" +
+    "|           ||                                                         |\n" +
+    "|           ||                                                         |\n" +
+    "|           ||                                                         |\n" +
+    "|           ||                                                         |\n" +
+    "|                                                                      |\n" +
+    "|______________________________________________________________________|\n" +
+    "|                                                                      |\n" +
+    "| 1. Cursed Dagger  2. Forbidden Tome  3. Eldritch Staff               |\n" +
+    "|______________________________________________________________________|\n" +
+    "\\______________________________________________________________________/\n" +
+    "\nEnter your choice (1-3): "
+);
+            OUTER:
             while (true) {
-                String weaponChoice = input.nextLine().toLowerCase();
-                    
-                if ("".equals(weaponChoice)) {
-                    character.setWeapon(new Weapon("", Item.Weight.LIGHT, Damage.WEAK));
-                    break;
-                } else if ("".equals(weaponChoice)) {
-                    character.setWeapon(new Weapon("", Item.Weight.MODERATE, Damage.MODERATE));
-                    break;
-                } else if ("".equals(weaponChoice)) {
-                    character.setWeapon(new Weapon("", Item.Weight.HEAVY, Damage.STRONG));
-                    break;
-                } else {
-                    System.out.print("\nplease choose one of the options listed: ");
+                int weaponChoice = input.nextInt();
+                switch (weaponChoice) {
+                    case 1 -> {
+                        character.setWeapon(new Weapon("Cursed Dagger", Item.Weight.LIGHT, Damage.WEAK));
+                        break OUTER;
+                    }
+                    case 2 -> {
+                        character.setWeapon(new Weapon("Forbidden Tome", Item.Weight.MODERATE, Damage.MODERATE));
+                        break OUTER;
+                    }
+                    case 3 -> {
+                        character.setWeapon(new Weapon("Eldritch Staff", Item.Weight.HEAVY, Damage.STRONG));
+                        break OUTER;
+                    }
+                    default -> System.out.print("\nplease choose one of the options listed: ");
                 }
             }
         } else if (character instanceof Archer) {
             //sout
+            OUTER:
             while (true) {
-                String weaponChoice = input.nextLine().toLowerCase();
-                    
-                if ("".equals(weaponChoice)) {
-                    character.setWeapon(new Weapon("", Item.Weight.LIGHT, Damage.WEAK));
-                    break;
-                } else if ("".equals(weaponChoice)) {
-                    character.setWeapon(new Weapon("", Item.Weight.MODERATE, Damage.MODERATE));
-                    break;
-                } else if ("".equals(weaponChoice)) {
-                    character.setWeapon(new Weapon("", Item.Weight.HEAVY, Damage.STRONG));
-                    break;
-                } else {
-                    System.out.print("\nplease choose one of the options listed: ");
+                int weaponChoice = input.nextInt();
+                switch (weaponChoice) {
+                    case 1 -> {
+                        character.setWeapon(new Weapon("", Item.Weight.LIGHT, Damage.WEAK));
+                        break OUTER;
+                    }
+                    case 2 -> {
+                        character.setWeapon(new Weapon("", Item.Weight.MODERATE, Damage.MODERATE));
+                        break OUTER;
+                    }
+                    case 3 -> {
+                        character.setWeapon(new Weapon("", Item.Weight.HEAVY, Damage.STRONG));
+                        break OUTER;
+                    }
+                    default -> System.out.print("\nplease choose one of the options listed: ");
                 }
             }
         } else if (character instanceof Swordsman) {
-            //sout
+            System.out.print(
+            "\n" +
+            "  _______________________________________________________\n" +
+            " /                                                       \\\n" +
+            "|               ~ SELECT YOUR SWORD ~                     |\n" +
+            "|_________________________________________________________|\n" +
+            "|                                                         |\n" +
+            "|  [1] LIGHT                                              |\n" +
+            "|          //                                             |\n" +
+            "|  ()======>>=====================--                      |\n" +
+            "|          \\\\                                             |\n" +
+            "|                                                         |\n" +
+            "|  [2] MODERATE                                            |\n" +
+            "|           |\\                                            |\n" +
+            "|           | \\                                           |\n" +
+            "|  ()########|  =================================*        |\n" +
+            "|           | /                                           |\n" +
+            "|           |/                                            |\n" +
+            "|                                                         |\n" +
+            "|  [3] HEAVY                                              |\n" +
+            "|                />                                       |\n" +
+            "|   ()          //-----------------------------------(    |\n" +
+            "|  (*)OXOXOXOXO(*>      --------------------         \\    |\n" +
+            "|   ()          \\-------------------------------------)   |\n" +
+            "|                \\>                                       |\n" +
+            "|_________________________________________________________|\n" +
+            "|                                                         |\n" +
+            "| 1. Quick Dagger   2. Versatile Longsword                |\n" +
+            "| 3. Massive Zweihänder                                   |\n" +
+            "|_________________________________________________________|\n" +
+            "\\________________________________________________________/\n" +
+            "\nEnter your choice (1-3): ");
+            OUTER:
             while (true) {
-                String weaponChoice = input.nextLine().toLowerCase();
-                    
-                if ("".equals(weaponChoice)) {
-                    character.setWeapon(new Weapon("", Item.Weight.LIGHT, Damage.WEAK));
-                    break;
-                } else if ("".equals(weaponChoice)) {
-                    character.setWeapon(new Weapon("", Item.Weight.MODERATE, Damage.MODERATE));
-                    break;
-                } else if ("".equals(weaponChoice)) {
-                    character.setWeapon(new Weapon("", Item.Weight.HEAVY, Damage.STRONG));
-                    break;
-                } else {
-                    System.out.print("\nplease choose one of the options listed: ");
+                int weaponChoice = input.nextInt();
+                switch (weaponChoice) {
+                    case 1 -> {
+                        character.setWeapon(new Weapon("Shortsword", Item.Weight.LIGHT, Damage.WEAK));
+                        break OUTER;
+                    }
+                    case 2 -> {
+                        character.setWeapon(new Weapon("Rapier", Item.Weight.MODERATE, Damage.MODERATE));
+                        break OUTER;
+                    }
+                    case 3 -> {
+                        character.setWeapon(new Weapon("Zweihänder", Item.Weight.HEAVY, Damage.STRONG));
+                        break OUTER;
+                    }
+                    default -> System.out.print("\nplease choose one of the options listed: ");
                 }
             }
         } 
