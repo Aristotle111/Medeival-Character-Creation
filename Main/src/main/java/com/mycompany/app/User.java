@@ -16,6 +16,12 @@ public class User {
         this.username = username;
         this.characters = characters;
     }
+    
+
+    @Override
+    public String toString() {
+        return "User [ " + username + " ]\n\ncharacters: \n\n" + characters;
+    }
 
     public String getUsername() {
         return username;

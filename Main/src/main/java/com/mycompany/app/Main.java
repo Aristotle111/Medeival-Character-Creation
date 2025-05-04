@@ -10,7 +10,6 @@ public class Main {
     public static void main(String[] args) {
         try (input) {
             userSetup();
-            characterSetup();
         }
     }
 
@@ -42,9 +41,10 @@ public class Main {
         User user = new User();
         user.setUsername(username);
         System.out.println("\nWelcome, " + username + "! Your journey begins...");
+        characterSetup(user);
     }
 
-    public static void characterSetup() {
+    public static void characterSetup(User user) {
         System.out.print("\n" +
     " _____________________________________________________________________ \n" +
     "/                                                                     \\\n" +
@@ -119,10 +119,10 @@ public class Main {
         character.setAge(input.nextInt());
         input.nextLine();
 
-        pickWeapon(character);
+        pickWeapon(character, user);
     }
 
-    public static void pickWeapon(Character character) {
+    public static void pickWeapon(Character character, User user) {
         if (character instanceof Mage) {
             System.out.print("\n" +
     " __________________________________________________________________\n" +
@@ -180,8 +180,9 @@ public class Main {
                 int weaponChoice = input.nextInt();
                 switch (weaponChoice) {
                     case 1 -> {
-                        character.setWeapon(new Weapon("Cursed Dagger", Item.Weight.LIGHT, Damage.WEAK, "\"|           /| ____________                                        |\\n" +
+                        character.setWeapon(new Weapon("Cursed Dagger", Item.Weight.LIGHT, Damage.WEAK, "|           /| ____________                                        |\n" +
                          "|       O|===|* >____________>                                     |\n" + "|           \\|                                                     |\n"));
+                         System.out.println("great choice!");
                         break OUTER;
                     }
                     case 2 -> {
@@ -195,6 +196,7 @@ public class Main {
     "|    |     |  /                                                    |\n" +
     "|    |_____| /                                                     |\n" +
     "|    (_____(/                                                      |\n"));
+    System.out.println("great choice!");
                         break OUTER;
                     }
                     case 3 -> {
@@ -214,6 +216,7 @@ public class Main {
                             "|           ||                                                     |\n" +
                             "|           ||                                                     |\n" +
                             "|           ||                                                     |\n"));
+                            System.out.println("great choice!");
                         break OUTER;
                     }
                     default -> System.out.print("\nplease choose one of the options listed: ");
@@ -286,6 +289,7 @@ public class Main {
                             "|         )                                                            |\n" +
                             "|        /                                                             |\n" +
                             "|       /                                                              |\n"));
+                            System.out.println("great choice!");
                         break OUTER;
                     }
                     case 2 -> {
@@ -300,6 +304,7 @@ public class Main {
     "|         //                                                           |\n" +
     "|        //                                                            |\n" +
     "|       (                                                              |\n"));
+    System.out.println("great choice!");
                         break OUTER;
                     }
                     case 3 -> {
@@ -318,6 +323,7 @@ public class Main {
                             "|                \\      ||                                             |\n" + 
                             "|                   \\   |/                                             |\n" + 
                             "|                      /.                                              |\n"));
+                            System.out.println("great choice!");
                         break OUTER;
                     }
                     default -> System.out.print("\nplease choose one of the options listed: ");
@@ -364,28 +370,44 @@ public class Main {
                         character.setWeapon(new Weapon("Shortsword", Item.Weight.LIGHT, Damage.WEAK, "|          //                                      |\n" +
             "|  ()======>>=====================--               |\n" +
             "|          \\\\                                      |\n"));
+            System.out.println("great choice!");
                         break OUTER;
                     }
                     case 2 -> {
                         character.setWeapon(new Weapon("Rapier", Item.Weight.MODERATE, Damage.MODERATE, "|           |\\                                                 |\n" + 
                         "|           | \\                                                |\n" + "|  ()########|  =================================*             |\n" +
                         "|           | /                                                |\n" + "|           |/                                                 |\n"));
+                        System.out.println("great choice!");
                         break OUTER;
                     }
                     case 3 -> {
                         character.setWeapon(new Weapon("Zweihander", Item.Weight.HEAVY, Damage.STRONG, "|                />                                            |\n" +
                         "|   ()          //-----------------------------------(         |\n" + "|  (*)OXOXOXOXO(*>      --------------------         \\         |\n" +
                         "|   ()          \\-------------------------------------)        |\n" + "|                \\>                                            |\n"));
+                        System.out.println("great choice!");
                         break OUTER;
                     }
                     default -> System.out.print("\nplease choose one of the options listed: ");
                 }
             }
-        } 
+        }
+        user.characters.add(character); 
         try (FileWriter fw = new FileWriter("Characters.txt")) {
-            fw.write(character.toString());
+            fw.write(user.toString());
         } catch (Exception e) {
             System.out.println("Failed to run.");
         }
+        System.out.print("\nWould you like to create another character? (yes or no): ");
+        while (true) {
+            String answer = input.next().toLowerCase();
+            if ("yes".equals(answer)) {
+                characterSetup(user);
+            } else if ("no".equals(answer)) {
+                System.exit(0);
+            } else {
+                System.out.println("please choose one of the options listed: ");
+            }
+        }
+        
     }
 }
