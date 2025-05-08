@@ -181,44 +181,44 @@ public class Main {
                 switch (weaponChoice) {
                     case 1 -> {
                         character.setWeapon(new Weapon("Cursed Dagger", Item.Weight.LIGHT, Damage.WEAK, "|           /| ____________                                        |\n" +
-                            "|       O|===|* >____________>                                     |\n" + "|           \\|                                                     |\n"));
-                            System.out.println("\ngreat choice!");
-                            character.weapon.weild();
+                        "|       O|===|* >____________>                                     |\n" + "|           \\|                                                     |\n"));
+                        System.out.println("\ngreat choice!");
+                        character.weapon.weild();
                         break OUTER;
                     }
                     case 2 -> {
-                        character.setWeapon(new Weapon("Forbidden Tome", Item.Weight.MODERATE, Damage.MODERATE, "|       ______                                                     |\n" +
-                            "|      /     /|                                                    |\n" +
-                            "|     /_____/ |                                                    |\n" +
-                            "|    |     |  |                                                    |\n" +
-                            "|    |     |  |                                                    |\n" +
-                            "|    |_____|  |                                                    |\n" +
-                            "|    |     |  |                                                    |\n" +
-                            "|    |     |  /                                                    |\n" +
-                            "|    |_____| /                                                     |\n" +
-                            "|    (_____(/                                                      |\n"));
-                            System.out.println("\ngreat choice!");
+                        character.setWeapon(new Weapon("Forbidden Tome", Item.Weight.BALANCED, Damage.BALANCED, "|       ______                                                     |\n" +
+                        "|      /     /|                                                    |\n" +
+                        "|     /_____/ |                                                    |\n" +
+                        "|    |     |  |                                                    |\n" +
+                        "|    |     |  |                                                    |\n" +
+                        "|    |_____|  |                                                    |\n" +
+                        "|    |     |  |                                                    |\n" +
+                        "|    |     |  /                                                    |\n" +
+                        "|    |_____| /                                                     |\n" +
+                        "|    (_____(/                                                      |\n"));
+                        System.out.println("\ngreat choice!");
                         break OUTER;
                     }
                     case 3 -> {
                         character.setWeapon(new Weapon("Eldritch Staff", Item.Weight.HEAVY, Damage.STRONG, "|       \\ .,||,. /                                                 |\n" +
-                            "|        \\'║║║║'/                                                  |\n" +
-                            "|    =--+=║║██║║=+--=                                              |\n" +
-                            "|         /║║║║\\                                                   |\n" +
-                            "|        /  ||  \\                                                  |\n" +
-                            "|           ||                                                     |\n" +
-                            "|           ||                                                     |\n" +
-                            "|           ||                                                     |\n" +
-                            "|           ||                                                     |\n" +
-                            "|           ||                                                     |\n" +
-                            "|           ||                                                     |\n" +
-                            "|           ||                                                     |\n" +
-                            "|           ||                                                     |\n" +
-                            "|           ||                                                     |\n" +
-                            "|           ||                                                     |\n" +
-                            "|           ||                                                     |\n"));
-                            System.out.println("\ngreat choice!");
-                            character.weapon.weild();
+                        "|        \\'║║║║'/                                                  |\n" +
+                        "|    =--+=║║██║║=+--=                                              |\n" +
+                        "|         /║║║║\\                                                   |\n" +
+                        "|        /  ||  \\                                                  |\n" +
+                        "|           ||                                                     |\n" +
+                        "|           ||                                                     |\n" +
+                        "|           ||                                                     |\n" +
+                        "|           ||                                                     |\n" +
+                        "|           ||                                                     |\n" +
+                        "|           ||                                                     |\n" +
+                        "|           ||                                                     |\n" +
+                        "|           ||                                                     |\n" +
+                        "|           ||                                                     |\n" +
+                        "|           ||                                                     |\n" +
+                        "|           ||                                                     |\n"));
+                        System.out.println("\ngreat choice!");
+                        character.weapon.weild();
                         break OUTER;
                     }
                     default -> System.out.print("\nplease choose one of the options listed: ");
@@ -285,50 +285,50 @@ public class Main {
                 switch (weaponChoice) {
                     case 1 -> {
                         character.setWeapon(new Weapon("Swiftstrike", Item.Weight.LIGHT, Damage.WEAK, "|       \\                                                              |\n" +
-                            "|        \\                                                             |\n" +
-                            "|         )                                                            |\n" +
-                            "|    #===---->                                                         |\n" +
-                            "|         )                                                            |\n" +
-                            "|        /                                                             |\n" +
-                            "|       /                                                              |\n"));
-                            System.out.println("\ngreat choice!");
-                            character.weapon.weild();
+                        "|        \\                                                             |\n" +
+                        "|         )                                                            |\n" +
+                        "|    #===---->                                                         |\n" +
+                        "|         )                                                            |\n" +
+                        "|        /                                                             |\n" +
+                        "|       /                                                              |\n"));
+                        System.out.println("\ngreat choice!");
+                        character.weapon.weild();
                         break OUTER;
                     }
                     case 2 -> {
-                        character.setWeapon(new Weapon("Hunter's Recurve", Item.Weight.MODERATE, Damage.MODERATE, "|       (                                                              |\n" +
-                            "|        \\\\                                                            |\n" +
-                            "|         \\\\                                                           |\n" +
-                            "|          \\\\                                                          |\n" +
-                            "|           ))                                                         |\n" +
-                            "|   ###===========>>                                                   |\n" +
-                            "|           ))                                                         |\n" +
-                            "|          //                                                          |\n" +
-                            "|         //                                                           |\n" +
-                            "|        //                                                            |\n" +
-                            "|       (                                                              |\n"));
-                            System.out.println("\ngreat choice!");
-                            character.weapon.weild();
+                        character.setWeapon(new Weapon("Hunter's Recurve", Item.Weight.BALANCED, Damage.BALANCED, "|       (                                                              |\n" +
+                        "|        \\\\                                                            |\n" +
+                        "|         \\\\                                                           |\n" +
+                        "|          \\\\                                                          |\n" +
+                        "|           ))                                                         |\n" +
+                        "|   ###===========>>                                                   |\n" +
+                        "|           ))                                                         |\n" +
+                        "|          //                                                          |\n" +
+                        "|         //                                                           |\n" +
+                        "|        //                                                            |\n" +
+                        "|       (                                                              |\n"));
+                        System.out.println("\ngreat choice!");
+                        character.weapon.weild();
                         break OUTER;
                     }
                     case 3 -> {
                         character.setWeapon(new Weapon("Titan's War Bow", Item.Weight.HEAVY, Damage.STRONG, "|                     \\.                                               |\n" + 
-                            "|                  /   |.                                              |\n" + 
-                            "|               /      '|.                                             |\n" + 
-                            "|            /          |\\                                             |\n" + 
-                            "|         /             ||                                             |\n" + 
-                            "|       /               ||                                             |\n" +
-                            "|    ||                 ||                                             |\n" + 
-                            "|    || ================##==========>                                  |\n" + 
-                            "|    ||                 ##                                             |\n" + 
-                            "|      \\                ##                                             |\n" + 
-                            "|          \\            ||                                             |\n" + 
-                            "|             \\         ||                                             |\n" + 
-                            "|                \\      ||                                             |\n" + 
-                            "|                   \\   |/                                             |\n" + 
-                            "|                      /.                                              |\n"));
-                            System.out.println("\ngreat choice!");
-                            character.weapon.weild();
+                        "|                  /   |.                                              |\n" + 
+                        "|               /      '|.                                             |\n" + 
+                        "|            /          |\\                                             |\n" + 
+                        "|         /             ||                                             |\n" + 
+                        "|       /               ||                                             |\n" +
+                        "|    ||                 ||                                             |\n" + 
+                        "|    || ================##==========>                                  |\n" + 
+                        "|    ||                 ##                                             |\n" + 
+                        "|      \\                ##                                             |\n" + 
+                        "|          \\            ||                                             |\n" + 
+                        "|             \\         ||                                             |\n" + 
+                        "|                \\      ||                                             |\n" + 
+                        "|                   \\   |/                                             |\n" + 
+                        "|                      /.                                              |\n"));
+                        System.out.println("\ngreat choice!");
+                        character.weapon.weild();
                         break OUTER;
                     }
                     default -> System.out.print("\nplease choose one of the options listed: ");
@@ -373,33 +373,166 @@ public class Main {
                 switch (weaponChoice) {
                     case 1 -> {
                         character.setWeapon(new Weapon("Shortsword", Item.Weight.LIGHT, Damage.WEAK, "|          //                                      |\n" +
-                            "|  ()======>>=====================--               |\n" +
-                            "|          \\\\                                      |\n"));
-                            System.out.println("\ngreat choice!");
-                            character.weapon.weild();
+                        "|  ()======>>=====================--               |\n" +
+                        "|          \\\\                                      |\n"));
+                        System.out.println("\ngreat choice!");
+                        character.weapon.weild();
                         break OUTER;
                     }
                     case 2 -> {
-                        character.setWeapon(new Weapon("Rapier", Item.Weight.MODERATE, Damage.MODERATE, "|           |\\                                                 |\n" + 
-                            "|           | \\                                                |\n" + "|  ()########|  =================================*             |\n" +
-                            "|           | /                                                |\n" + "|           |/                                                 |\n"));
-                            System.out.println("\ngreat choice!");
-                            character.weapon.weild();
+                        character.setWeapon(new Weapon("Rapier", Item.Weight.BALANCED, Damage.BALANCED, "|           |\\                                                 |\n" + 
+                        "|           | \\                                                |\n" + "|  ()########|  =================================*             |\n" +
+                        "|           | /                                                |\n" + "|           |/                                                 |\n"));
+                        System.out.println("\ngreat choice!");
+                        character.weapon.weild();
                         break OUTER;
                     }
                     case 3 -> {
                         character.setWeapon(new Weapon("Zweihander", Item.Weight.HEAVY, Damage.STRONG, "|                />                                            |\n" +
-                            "|   ()          //-----------------------------------(         |\n" + "|  (*)OXOXOXOXO(*>      --------------------         \\         |\n" +
-                            "|   ()          \\-------------------------------------)        |\n" + "|                \\>                                            |\n"));
-                            System.out.println("\ngreat choice!");
-                            character.weapon.weild();
+                        "|   ()          //-----------------------------------(         |\n" + "|  (*)OXOXOXOXO(*>      --------------------         \\         |\n" +
+                        "|   ()          \\-------------------------------------)        |\n" + "|                \\>                                            |\n"));
+                        System.out.println("\ngreat choice!");
+                        character.weapon.weild();
                         break OUTER;
                     }
                     default -> System.out.print("\nplease choose one of the options listed: ");
                 }
             }
         }
-        user.characters.add(character); 
+        pickArmor(character, user);
+    }
+
+    public static void pickArmor(Character character, User user) {
+        System.out.println("""
+
+          ╔══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+          ║                                                                                                                                  ║
+          ║                                               █████╗ ██████╗ ███╗   ███╗ ██████╗ ██████╗                                         ║
+          ║                                              ██╔══██╗██╔══██╗████╗ ████║██╔═══██╗██╔══██╗                                        ║
+          ║                                              ███████║██████╔╝██╔████╔██║██║   ██║██████╔╝                                        ║
+          ║                                              ██╔══██║██╔══██╗██║╚██╔╝██║██║   ██║██╔══██╗                                        ║
+          ║                                              ██║  ██║██║  ██║██║ ╚═╝ ██║╚██████╔╝██║  ██║                                        ║
+          ║                                              ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝ ╚═════╝ ╚═╝  ╚═╝                                        ║
+          ║                                                                                                                                  ║
+          ║    ╔════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗    ║
+          ║    ║                                                      ARMOR SELECTION                                                   ║    ║
+          ║    ╚════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝    ║
+          ║                                                                                                                                  ║
+          ║            [1] LEATHER ARMOR                              [2] CHAINMAIL                              [3] PLATE ARMOR             ║
+          ║                                                                                                                                  ║
+          ║          Lightweight and flexible                       Balanced protection                         Maximum protection           ║
+          ║                                                                                                                                  ║
+          ║                  _____                                          {}                                         {|}                   ║
+          ║                 /=====\\                                        .--.                                       .---.                  ║
+          ║                 ||   ||                                       /.--.\\                                     /_____\\                 ║
+          ║                 |`   `|                                       |====|                                     |+++++|                 ║
+          ║             .-;`\\=====/`;-.                                   |`::`|                                     |+++++|                 ║
+          ║            /  |=========|  \\                              .-;`\\..../`;-.                             .-;`\\_____/`;-.             ║
+          ║           |   /=========\\   |                            /''|...::...|''\\                          /   |_________|   \\           ║
+          ║           ;--'\\=========/'--;                           |'''/::::::::\\'''|                        |    /         \\    |          ║
+          ║           <__>,>.=====.<,<__>                           ;--'\\::::::::/'--;                        ;---'\\         /'---;          ║
+          ║           |  |/=========\\|  |                           <__>,>._::_.<,<__>                        <___>,>._____.<,<___>          ║
+          ║           \\::/|=========|\\::/                           |::|/:::^^:::\\|::|                        |   |/_________\\|   |          ║
+          ║           |||\\|=========|/|||                           \\::/|::::::::|\\::/                        \\:::/|         |\\:::/          ║
+          ║               |___/ \\___|                               |||\\|::::::::|/|||                         |||\\|_________|/|||           ║
+          ║               \\_  | |  _/                               ''' |___/\\___| '''                            |____/ \\____|              ║
+          ║               <_ >| | <_>                                   \\_  ||  _/                                \\__  | |  __/              ║
+          ║               |   | |   |                                   <_ >|| <_>                                <__ >| | <__>              ║
+          ║               |   | |   |                                   |'''||'''|                                |    | |    |              ║
+          ║               _\\.:| |:./_                                   |'''||'''|                                |    | |    |              ║
+          ║              /____\\ /____\\                                  _\\.:||:./_                                _\\ .:| |:. /_              ║
+          ║                                                            /____\\/____\\                              /_____\\ /_____\\             ║
+          ║                                                                                                                                  ║
+          ║                                                                                                                                  ║
+          ║                                                                                                                                  ║
+          ╚══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
+          Enter your choice (1-3): """);
+
+        boolean armorSelected = false;
+        while (!armorSelected) {
+            int armorChoice = input.nextInt();
+            switch (armorChoice) {
+                case 1 -> {
+                    character.setArmor(new Armor("Leather", Item.Weight.LIGHT, Armor.Defense.WEAK, 
+                                                "|                _____                                                |\r\n" + //
+                                                "|               /=====\\                                               |\r\n" + //
+                                                "|               ||   ||                                               |\r\n" + //
+                                                "|               |`   `|                                               |\r\n" + //
+                                                "|           .-;`\\=====/`;-.                                           |\r\n" + //
+                                                "|          /  |=========|  \\                                          |\r\n" + //
+                                                "|         |   /=========\\  |                                          |\r\n" + //
+                                                "|         ;--'\\========/'--;                                          |\r\n" + //
+                                                "|         <__>,>.=====.<,<__>                                         |\r\n" + //
+                                                "|         |  |/=========\\|  |                                         |\r\n" + //
+                                                "|         \\::/|=========|\\::/                                         |\r\n" + //
+                                                "|         |||\\|=========|/|||                                         |\r\n" + //
+                                                "|             |___/ \\___|                                             |\r\n" + //
+                                                "|             \\_  | |  _/                                             |\r\n" + //
+                                                "|             <_ >| | <_>                                             |\r\n" + //
+                                                "|             |   | |   |                                             |\r\n" + //
+                                                "|             |   | |   |                                            |\r\n" + //
+                                                "|             _\\.:| |:./_                                             |\r\n" + //
+                                                "|            /____\\ /____\\                                            |"));
+                    character.armor.wear();
+                    armorSelected = true;
+                }
+                case 2 -> {
+                    character.setArmor(new Armor("Chainmail", Item.Weight.BALANCED, Armor.Defense.DECENT, 
+                                                "|                  {}                                                  |\r\n" + //
+                                                "|                 .--.                                                 |\r\n" + //
+                                                "|                /.--.\\                                                |\r\n" + //
+                                                "|                |====|                                                |\r\n" + //
+                                                "|                |`::`|                                                |\r\n" + //
+                                                "|            .-;`\\..../`;-.                                            |\r\n" + //
+                                                "|           /  |...::...|  \\                                           |\r\n" + //
+                                                "|          |   /'''::'''\\   |                                          |\r\n" + //
+                                                "|          ;--'\\   ::   /'--;                                          |\r\n" + //
+                                                "|          <__>,>._::_.<,<__>                                          |\r\n" + //
+                                                "|          |  |/   ^^   \\|  |                                          |\r\n" + //
+                                                "|          \\::/|        |\\::/                                          |\r\n" + //
+                                                "|          |||\\|        |/|||                                          |\r\n" + //
+                                                "|          ''' |___/\\___| '''                                          |\r\n" + //
+                                                "|              \\_  ||  _/                                              |\r\n" + //
+                                                "|              <_ >|| <_>                                              |\r\n" + //
+                                                "|              |   ||   |                                              |\r\n" + //
+                                                "|              |   ||   |                                              |\r\n" + //
+                                                "|              _\\.:||:./_                                              |\r\n" + //
+                                                "|             /____\\/____\\                                             |"));
+                    character.armor.wear();
+                    armorSelected = true;
+                }
+                case 3 -> {
+                    character.setArmor(new Armor("Steel Plated", Item.Weight.HEAVY, Armor.Defense.STRONG, 
+                                                "|                   {|}                                                 |\r\n" + //
+                                                "|                  .---.                                                |\r\n" + //
+                                                "|                 /_____\\                                               |\r\n" + //
+                                                "|                 |+++++|                                               |\r\n" + //
+                                                "|                 |+++++|                                               |\r\n" + //
+                                                "|             .-;`\\_____/`;-.                                           |\r\n" + //
+                                                "|           /   |_________|   \\                                         |\r\n" + //
+                                                "|          |    /         \\    |                                        |\r\n" + //
+                                                "|          ;---'\\         /'---;                                        |\r\n" + //
+                                                "|          <___>,>._____.<,<___>                                        |\r\n" + //
+                                                "|          |   |/_________\\|   |                                        |\r\n" + //
+                                                "|          \\:::/|         |\\:::/                                        |\r\n" + //
+                                                "|           |||\\|_________|/|||                                    |\r\n" + //
+                                                "|              |____/ \\____|                                       |\r\n" + //
+                                                "|              \\__  | |  __/                                       |\r\n" + //
+                                                "|              <__ >| | <__>                                       |\r\n" + //
+                                                "|              |    | |    |                                       |\r\n" + //
+                                                "|              |    | |    |                                       |\r\n" + //
+                                                "|              _\\ .:| |:. /_                                       |\r\n" + //
+                                                "|             /_____\\ /_____\\                                      |\r\n" + //
+                                                ""));
+                    character.armor.wear();
+                    armorSelected = true;
+                }
+                default ->  System.out.print("\nplease choose one of the options listed: ");
+            }
+        }
+
+        user.characters.add(character);
+
         try (FileWriter fw = new FileWriter("Characters.txt")) {
             fw.write(user.toString());
         } catch (Exception e) {
@@ -416,6 +549,5 @@ public class Main {
                 System.out.println("please choose one of the options listed: ");
             }
         }
-        
     }
 }

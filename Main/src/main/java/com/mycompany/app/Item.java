@@ -4,7 +4,7 @@ public abstract class Item extends Character {
     public String nameOfItem;
     public Weight weight;
 
-    public enum Weight {HEAVY, MODERATE, LIGHT};
+    public enum Weight {HEAVY, BALANCED, LIGHT};
 
     public Item() {
         this.nameOfItem = null;

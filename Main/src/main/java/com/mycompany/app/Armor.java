@@ -4,7 +4,7 @@ public class Armor extends Item implements Wearable {
     public Defense defense;
     public String imageOfArmor;
 
-    public enum Defense {WEAK, MODERATE, STRONG};
+    public enum Defense {WEAK, DECENT, STRONG};
 
     public Armor() {
         super();

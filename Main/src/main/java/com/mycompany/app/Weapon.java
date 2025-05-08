@@ -4,7 +4,7 @@ public class Weapon extends Item implements Weildable {
     public Damage damage;
     public String imageOfWeapon;
 
-    public enum Damage {WEAK, MODERATE, STRONG};
+    public enum Damage {WEAK, BALANCED, STRONG};
 
     public Weapon() {
         super();
@@ -25,7 +25,7 @@ public class Weapon extends Item implements Weildable {
 
     @Override
     public void weild() {
-        System.out.println("The weapon has been equipped, it feels powerful");
+        System.out.println("The weapon has been equipped, it feels " + getWeight().toString().toLowerCase());
     }
 
     public Damage getDamage() {
