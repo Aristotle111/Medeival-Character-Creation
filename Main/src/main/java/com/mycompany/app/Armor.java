@@ -20,6 +20,7 @@ public class Armor extends Item implements Wearable {
 
     @Override
     public void wear() {
+        System.out.println("The armor has been equipped, it's perfect");
     }
 
     @Override

@@ -13,6 +13,4 @@ public class Mage extends Character {
     public String toString() {
         return "Mage " + super.toString();
     }
-
-    
 }

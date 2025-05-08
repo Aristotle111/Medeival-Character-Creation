@@ -1,0 +1,17 @@
+User [ Aris ]
+
+characters: 
+
+[Swordsman 
+[ name = Aristotle ]
+[ age = 23 ]
+[ gender = MALE]
+[ armor = null ]
+[ weapon = [name = Zweihander, weight = HEAVY]
+|                />                                            |
+|   ()          //-----------------------------------(         |
+|  (*)OXOXOXOXO(*>      --------------------         \         |
+|   ()          \-------------------------------------)        |
+|                \>                                            |
+
+]

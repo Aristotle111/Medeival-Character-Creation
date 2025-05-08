@@ -25,7 +25,7 @@ public class Weapon extends Item implements Weildable {
 
     @Override
     public void weild() {
-        
+        System.out.println("The weapon has been equipped, it feels powerful");
     }
 
     public Damage getDamage() {

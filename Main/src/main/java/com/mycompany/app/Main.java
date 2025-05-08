@@ -181,22 +181,23 @@ public class Main {
                 switch (weaponChoice) {
                     case 1 -> {
                         character.setWeapon(new Weapon("Cursed Dagger", Item.Weight.LIGHT, Damage.WEAK, "|           /| ____________                                        |\n" +
-                         "|       O|===|* >____________>                                     |\n" + "|           \\|                                                     |\n"));
-                         System.out.println("great choice!");
+                            "|       O|===|* >____________>                                     |\n" + "|           \\|                                                     |\n"));
+                            System.out.println("\ngreat choice!");
+                            character.weapon.weild();
                         break OUTER;
                     }
                     case 2 -> {
                         character.setWeapon(new Weapon("Forbidden Tome", Item.Weight.MODERATE, Damage.MODERATE, "|       ______                                                     |\n" +
-    "|      /     /|                                                    |\n" +
-    "|     /_____/ |                                                    |\n" +
-    "|    |     |  |                                                    |\n" +
-    "|    |     |  |                                                    |\n" +
-    "|    |_____|  |                                                    |\n" +
-    "|    |     |  |                                                    |\n" +
-    "|    |     |  /                                                    |\n" +
-    "|    |_____| /                                                     |\n" +
-    "|    (_____(/                                                      |\n"));
-    System.out.println("great choice!");
+                            "|      /     /|                                                    |\n" +
+                            "|     /_____/ |                                                    |\n" +
+                            "|    |     |  |                                                    |\n" +
+                            "|    |     |  |                                                    |\n" +
+                            "|    |_____|  |                                                    |\n" +
+                            "|    |     |  |                                                    |\n" +
+                            "|    |     |  /                                                    |\n" +
+                            "|    |_____| /                                                     |\n" +
+                            "|    (_____(/                                                      |\n"));
+                            System.out.println("\ngreat choice!");
                         break OUTER;
                     }
                     case 3 -> {
@@ -216,7 +217,8 @@ public class Main {
                             "|           ||                                                     |\n" +
                             "|           ||                                                     |\n" +
                             "|           ||                                                     |\n"));
-                            System.out.println("great choice!");
+                            System.out.println("\ngreat choice!");
+                            character.weapon.weild();
                         break OUTER;
                     }
                     default -> System.out.print("\nplease choose one of the options listed: ");
@@ -289,22 +291,24 @@ public class Main {
                             "|         )                                                            |\n" +
                             "|        /                                                             |\n" +
                             "|       /                                                              |\n"));
-                            System.out.println("great choice!");
+                            System.out.println("\ngreat choice!");
+                            character.weapon.weild();
                         break OUTER;
                     }
                     case 2 -> {
                         character.setWeapon(new Weapon("Hunter's Recurve", Item.Weight.MODERATE, Damage.MODERATE, "|       (                                                              |\n" +
-    "|        \\\\                                                            |\n" +
-    "|         \\\\                                                           |\n" +
-    "|          \\\\                                                          |\n" +
-    "|           ))                                                         |\n" +
-    "|   ###===========>>                                                   |\n" +
-    "|           ))                                                         |\n" +
-    "|          //                                                          |\n" +
-    "|         //                                                           |\n" +
-    "|        //                                                            |\n" +
-    "|       (                                                              |\n"));
-    System.out.println("great choice!");
+                            "|        \\\\                                                            |\n" +
+                            "|         \\\\                                                           |\n" +
+                            "|          \\\\                                                          |\n" +
+                            "|           ))                                                         |\n" +
+                            "|   ###===========>>                                                   |\n" +
+                            "|           ))                                                         |\n" +
+                            "|          //                                                          |\n" +
+                            "|         //                                                           |\n" +
+                            "|        //                                                            |\n" +
+                            "|       (                                                              |\n"));
+                            System.out.println("\ngreat choice!");
+                            character.weapon.weild();
                         break OUTER;
                     }
                     case 3 -> {
@@ -323,7 +327,8 @@ public class Main {
                             "|                \\      ||                                             |\n" + 
                             "|                   \\   |/                                             |\n" + 
                             "|                      /.                                              |\n"));
-                            System.out.println("great choice!");
+                            System.out.println("\ngreat choice!");
+                            character.weapon.weild();
                         break OUTER;
                     }
                     default -> System.out.print("\nplease choose one of the options listed: ");
@@ -368,23 +373,26 @@ public class Main {
                 switch (weaponChoice) {
                     case 1 -> {
                         character.setWeapon(new Weapon("Shortsword", Item.Weight.LIGHT, Damage.WEAK, "|          //                                      |\n" +
-            "|  ()======>>=====================--               |\n" +
-            "|          \\\\                                      |\n"));
-            System.out.println("great choice!");
+                            "|  ()======>>=====================--               |\n" +
+                            "|          \\\\                                      |\n"));
+                            System.out.println("\ngreat choice!");
+                            character.weapon.weild();
                         break OUTER;
                     }
                     case 2 -> {
                         character.setWeapon(new Weapon("Rapier", Item.Weight.MODERATE, Damage.MODERATE, "|           |\\                                                 |\n" + 
-                        "|           | \\                                                |\n" + "|  ()########|  =================================*             |\n" +
-                        "|           | /                                                |\n" + "|           |/                                                 |\n"));
-                        System.out.println("great choice!");
+                            "|           | \\                                                |\n" + "|  ()########|  =================================*             |\n" +
+                            "|           | /                                                |\n" + "|           |/                                                 |\n"));
+                            System.out.println("\ngreat choice!");
+                            character.weapon.weild();
                         break OUTER;
                     }
                     case 3 -> {
                         character.setWeapon(new Weapon("Zweihander", Item.Weight.HEAVY, Damage.STRONG, "|                />                                            |\n" +
-                        "|   ()          //-----------------------------------(         |\n" + "|  (*)OXOXOXOXO(*>      --------------------         \\         |\n" +
-                        "|   ()          \\-------------------------------------)        |\n" + "|                \\>                                            |\n"));
-                        System.out.println("great choice!");
+                            "|   ()          //-----------------------------------(         |\n" + "|  (*)OXOXOXOXO(*>      --------------------         \\         |\n" +
+                            "|   ()          \\-------------------------------------)        |\n" + "|                \\>                                            |\n"));
+                            System.out.println("\ngreat choice!");
+                            character.weapon.weild();
                         break OUTER;
                     }
                     default -> System.out.print("\nplease choose one of the options listed: ");
