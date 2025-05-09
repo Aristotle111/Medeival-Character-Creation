@@ -2,6 +2,7 @@ package com.mycompany.app;
 
 import java.io.FileWriter;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 
 import com.mycompany.app.Weapon.Damage;
@@ -11,6 +12,17 @@ public class Main {
     public static void main(String[] args) {
         try (input) {
             userSetup();
+        }
+    }
+
+    public static class WeaponDamageComparator implements Comparator<Character> {
+        @Override
+        public int compare(Character c1, Character c2) {
+            if (c1.weapon == null && c2.weapon == null) return 0;
+            if (c1.weapon == null) return -1;
+            if (c2.weapon == null) return 1;
+    
+            return c1.weapon.damage.compareTo(c2.weapon.damage);
         }
     }
 
@@ -58,6 +70,7 @@ public class Main {
                     choicePicked = true;
                 }
                 case 2 -> {
+                    System.out.println("Thank you for playing");
                     System.exit(0);
                     choicePicked = true;
                 }
@@ -114,6 +127,7 @@ public class Main {
     "\nChoose your destiny Mage, Archer, or Swordsman: ");
     
         Character character = null;
+        input.nextLine();
         while (character == null) {
             String choice = input.nextLine().trim().toLowerCase();
             switch (choice) {
@@ -563,7 +577,6 @@ public class Main {
         user.characters.add(character);
 
         try (FileWriter fw = new FileWriter("Characters.txt")) {
-            Collections.sort(user.characters);
             fw.write(user.toString());
         } catch (Exception e) {
             System.out.println("Failed to run.");
@@ -578,10 +591,29 @@ public class Main {
                     choicePicked = true;
                 }
                 case 2 -> {
-                    System.out.println(user.toString());
+                    System.out.print("How would you like them sorted? \n\n1. By character name alphabetically\n2. By weapon damage\n\nEnter your choice (1-2): ");
+                    boolean printTypePicked = false;
+                    OUTER:
+                    while (!printTypePicked) {
+                        int printTypeChoice = input.nextInt();
+                        switch (printTypeChoice) {
+                            case 1 -> {
+                                Collections.sort(user.characters);
+                                System.out.println(user.toString());
+                                break OUTER;
+                            }
+                            case 2 -> {
+                                user.characters.sort(new WeaponDamageComparator());
+                                System.out.println(user.toString());
+                                break OUTER;
+                            }
+                            default -> System.out.print("please choose one of the options listed: "); 
+                        }
+                    }
                     System.out.print("What is your next move? \n\n1. create a new character\n2. view my character(s)\n3. exit\n\nEnter your choice (1-3): ");
                 }
                 case 3 -> {
+                    System.out.println("Thank you for playing");
                     System.exit(0);
                     choicePicked = true;
                 }
