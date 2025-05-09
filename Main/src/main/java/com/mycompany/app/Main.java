@@ -1,6 +1,7 @@
 package com.mycompany.app;
 
 import java.io.FileWriter;
+import java.util.Collections;
 import java.util.Scanner;
 
 import com.mycompany.app.Weapon.Damage;
@@ -474,7 +475,7 @@ public class Main {
           ║                                                                                                                                  ║
           ║                                                                                                                                  ║
           ╚══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
-          Enter your choice (1-3): """);
+          Enter your choice (1-3):  """);
 
         boolean armorSelected = false;
         while (!armorSelected) {
@@ -498,7 +499,7 @@ public class Main {
                                                 "|             \\_  | |  _/                                             |\r\n" + //
                                                 "|             <_ >| | <_>                                             |\r\n" + //
                                                 "|             |   | |   |                                             |\r\n" + //
-                                                "|             |   | |   |                                            |\r\n" + //
+                                                "|             |   | |   |                                             |\r\n" + //
                                                 "|             _\\.:| |:./_                                             |\r\n" + //
                                                 "|            /____\\ /____\\                                            |"));
                     character.armor.wear();
@@ -562,6 +563,7 @@ public class Main {
         user.characters.add(character);
 
         try (FileWriter fw = new FileWriter("Characters.txt")) {
+            Collections.sort(user.characters);
             fw.write(user.toString());
         } catch (Exception e) {
             System.out.println("Failed to run.");

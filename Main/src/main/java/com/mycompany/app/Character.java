@@ -60,8 +60,8 @@ public class Character extends User implements Comparable<Character> {
 
     @Override
     public String toString() {
-        return "\n[ name = " + name + " ]\n" + "[ age = " + age + " ]\n" + "[ gender = "
-        + gender + "]\n" + "[ armor = " + armor + "\n\n" + "[ weapon = " + weapon + "\n";
+        return "\n[ name: " + name + " ]\n" + "[ age: " + age + " ]\n" + "[ gender: "
+        + gender + " ]\n" + "[ armor: " + armor + "\n\n" + "[ weapon: " + weapon + "\n";
     }
 
     public int getAge() {
@@ -105,7 +105,16 @@ public class Character extends User implements Comparable<Character> {
     }
 
     @Override
-    public int compareTo(Character o) {
-        return this.age - o.getAge();
+    public int compareTo(Character other) {
+        if (this.name == null && other.name == null) {
+            return 0;
+        }
+        if (this.name == null) {
+            return -1;
+        }
+        if (other.name == null) {
+            return 1;
+        }
+        return this.name.compareToIgnoreCase(other.name);
     }
 }
