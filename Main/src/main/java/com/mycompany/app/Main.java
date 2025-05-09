@@ -14,8 +14,10 @@ public class Main {
     }
 
     /**
-     * the initial user setup menu where the user is asked for their name. 
-     * This method creates a new User object then initializes the character setup.
+     * The initial user setup menu where the user is asked for their name. 
+     * This method creates a new User object.
+     * This method then asks the user to choose whether they want to create a new character or to leave the game.
+     * Initializes the character setup if the user chooses option 1.
      */
     public static void userSetup() {
         System.out.print("\n" +
@@ -63,6 +65,13 @@ public class Main {
         }
     }
 
+    /**
+     * This method handles the character creation process.
+     * It prompts the user to pick between 3 different character types, then uses their choice to create a new character of that type.
+     * Then it gets details from the user about the character they are making in order to make their creation come to life.
+     * Initializes the weapon selection method.
+     * @param user the input User object made in the userSetup method, containing the user's name and an arraylist of characters to be appended
+     */
     public static void characterSetup(User user) {
         System.out.print("\n" +
     " _____________________________________________________________________ \n" +
