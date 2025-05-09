@@ -11,6 +11,6 @@ public class Mage extends Character {
 
     @Override
     public String toString() {
-        return "Mage " + super.toString();
+        return " Mage ]" + super.toString();
     }
 }

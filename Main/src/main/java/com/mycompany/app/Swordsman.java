@@ -12,6 +12,6 @@ public class Swordsman extends Character {
 
     @Override
     public String toString() {
-        return "Swordsman " + super.toString();
+        return " Swordsman ]" + super.toString();
     }
 }

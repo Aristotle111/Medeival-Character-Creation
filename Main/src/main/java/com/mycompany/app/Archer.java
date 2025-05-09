@@ -11,6 +11,6 @@ public class Archer extends Character {
 
     @Override
     public String toString() {
-        return "Archer " + super.toString();
+        return " Archer ]" + super.toString();
     }
 }
