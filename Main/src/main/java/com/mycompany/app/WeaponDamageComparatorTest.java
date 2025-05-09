@@ -1,5 +1,8 @@
 package com.mycompany.app;
 
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
 import com.mycompany.app.Main.WeaponDamageComparator;
 
 public class WeaponDamageComparatorTest {
@@ -17,15 +20,15 @@ public class WeaponDamageComparatorTest {
 
     @Test
     void compare_BothNull() {
-        Character c1 = createCharacter("Mage", null);
-        Character c2 = createCharacter("Warrior", null);
-        assertEquals(0, comparator.compare(c1, c2));
+        Character c1 = createCharacter("Gurt", null);
+        Character c2 = createCharacter("PMO", null);
+        Assertions.assertEquals(0, comparator.compare(c1, c2));
     }
 
     @Test
     void compare_NormalInputs() {
-        Character c1 = createCharacter("Novice", Weapon.Damage.WEAK);
-        Character c2 = createCharacter("Fighter", Weapon.Damage.BALANCED);
-        assertTrue(comparator.compare(c1, c2) < 0);
+        Character c1 = createCharacter("Yogurt", Weapon.Damage.WEAK);
+        Character c2 = createCharacter("Yo", Weapon.Damage.BALANCED);
+        Assertions.assertTrue(comparator.compare(c1, c2) < 0);
     }
 }
