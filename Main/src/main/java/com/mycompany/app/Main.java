@@ -9,13 +9,27 @@ import com.mycompany.app.Weapon.Damage;
 
 public class Main {
     private static final Scanner input = new Scanner(System.in);
+
+    /**
+     * initializes the user setup menu when the user runs the code in order to start the game.
+     */
     public static void main(String[] args) {
         try (input) {
             userSetup();
         }
     }
 
+    /**
+     * static comparator class that sorts characters by their weapon damage.
+     * characters without weapon damage are considered the lowest damage.
+     */
     public static class WeaponDamageComparator implements Comparator<Character> {
+
+        /**
+         * compares two character objects based on their weapon damage
+         * @param c1 the first character to compare
+         * @param c2 the second character to compare
+         */
         @Override
         public int compare(Character c1, Character c2) {
             if (c1.weapon == null && c2.weapon == null) return 0;
@@ -165,6 +179,13 @@ public class Main {
         pickWeapon(character, user);
     }
 
+    /**
+     * This method handles the weapon selection process.
+     * It allows a player to select a weapon for their character based on their selected character class.
+     * It displays an ASCII-art menu of weapon choices and assigns the selected weapon to the character.
+     * @param character The character receiving the weapon (must be Mage, Archer, or Swordsman)
+     * @param user The player making the selection
+     */
     public static void pickWeapon(Character character, User user) {
         if (character instanceof Mage) {
             System.out.print("\n" +
@@ -445,6 +466,16 @@ public class Main {
         pickArmor(character, user);
     }
 
+    /**
+     * This method handles the armor selection process.
+     * It displays an interactive ASCII-art armor selection menu and assigns armor to the character.
+     * @param character character The character receiving armor
+     * @param user The player making the selection
+     * Once the armor has been selected, the character is complete.
+     * The completed character is added the the User's "characters" arrayList.
+     * The characters arrayList is writen into a text file where the user can view and save their creations.
+     * The user is prompted to make a choice: (make a new character, view their existing characters, or exit the program)
+     */
     public static void pickArmor(Character character, User user) {
         System.out.print("""
 
