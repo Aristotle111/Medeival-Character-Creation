@@ -104,6 +104,9 @@ public class Character extends User implements Comparable<Character> {
         this.weapon = weapon;
     }
 
+    /**
+     * Compares this character with another character for order based on their names.
+     */
     @Override
     public int compareTo(Character other) {
         if (this.name == null && other.name == null) {
