@@ -557,7 +557,7 @@ public class Main {
         } catch (Exception e) {
             System.out.println("Failed to run.");
         }
-        System.out.print("What is your next move? \n\n1. create a new character\n3. view my characters\n2. exit\n\nEnter your choice (1-2): ");
+        System.out.print("What is your next move? \n\n1. create a new character\n2. view my character(s)\n3. exit\n\nEnter your choice (1-3): ");
         boolean choicePicked = false;
         while (!choicePicked) { 
             int menuChoice = input.nextInt();
@@ -568,6 +568,7 @@ public class Main {
                 }
                 case 2 -> {
                     System.out.println(user.toString());
+                    System.out.print("What is your next move? \n\n1. create a new character\n2. view my character(s)\n3. exit\n\nEnter your choice (1-3): ");
                 }
                 case 3 -> {
                     System.exit(0);
