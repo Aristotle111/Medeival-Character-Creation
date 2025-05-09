@@ -13,6 +13,10 @@ public class Main {
         }
     }
 
+    /**
+     * the initial user setup menu where the user is asked for their name. 
+     * This method creates a new User object then initializes the character setup.
+     */
     public static void userSetup() {
         System.out.print("\n" +
         "  ╔════════════════════════════════════════════════╗\n" +
@@ -30,18 +34,33 @@ public class Main {
         "  ║                                                ║\n" +
         "  ╚════════════════════════════════════════════════╝\n");
 
-        System.out.print("\n Declare yourself, wanderer: ");
+        System.out.print("\n Declare yourself: ");
         String username = input.nextLine().trim();
             
         while (username.isEmpty()) {
-            System.out.print("\nA name is required, brave one. Try again: ");
+            System.out.print("\nA name is required. Try again: ");
             username = input.nextLine().trim();
         }
         
         User user = new User();
         user.setUsername(username);
-        System.out.println("\nWelcome, " + username + "! Your journey begins...");
-        characterSetup(user);
+        System.out.println("\nWelcome, " + username);
+        System.out.print("What is your next move? \n\n1. create a new character\n2. exit\n\nEnter your choice (1-2): ");
+        boolean choicePicked = false;
+        while (!choicePicked) { 
+            int menuChoice = input.nextInt();
+            switch (menuChoice) {
+                case 1 -> {
+                    characterSetup(user);
+                    choicePicked = true;
+                }
+                case 2 -> {
+                    System.exit(0);
+                    choicePicked = true;
+                }
+                default -> System.out.print("please choose one of the options listed: ");
+            }
+        }
     }
 
     public static void characterSetup(User user) {
@@ -538,15 +557,23 @@ public class Main {
         } catch (Exception e) {
             System.out.println("Failed to run.");
         }
-        System.out.print("\nWould you like to create another character? (yes or no): ");
-        while (true) {
-            String answer = input.next().toLowerCase();
-            if ("yes".equals(answer)) {
-                characterSetup(user);
-            } else if ("no".equals(answer)) {
-                System.exit(0);
-            } else {
-                System.out.println("please choose one of the options listed: ");
+        System.out.print("What is your next move? \n\n1. create a new character\n3. view my characters\n2. exit\n\nEnter your choice (1-2): ");
+        boolean choicePicked = false;
+        while (!choicePicked) { 
+            int menuChoice = input.nextInt();
+            switch (menuChoice) {
+                case 1 -> {
+                    characterSetup(user);
+                    choicePicked = true;
+                }
+                case 2 -> {
+                    System.out.println(user.toString());
+                }
+                case 3 -> {
+                    System.exit(0);
+                    choicePicked = true;
+                }
+                default -> System.out.print("please choose one of the options listed: ");
             }
         }
     }
