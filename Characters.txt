@@ -1,0 +1,14 @@
+User [ aris ]
+
+characters: 
+[Mage 
+[ name = mae ]
+[ age = 23 ]
+[ gender = MALE]
+[ armor = null ]
+[ weapon = [name = Cursed Dagger, weight = LIGHT]
+|           /| ____________                                        |
+|       O|===|* >____________>                                     |
+|           \|                                                     |
+
+]
