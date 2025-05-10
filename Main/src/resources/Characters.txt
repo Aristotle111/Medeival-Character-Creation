@@ -1,10 +1,10 @@
-User [ adfj ]
+User [ aris ]
 
 characters: 
 
 [ Mage ]
-[ name: sf ]
-[ age: 2 ]
+[ name: fsehfh ]
+[ age: 23 ]
 [ gender: MALE ]
 [ armor: [ type: Chainmail, weight: BALANCED ]
 |                  {}                                                  |
@@ -28,22 +28,9 @@ characters:
 |              _\.:||:./_                                              |
 |             /____\/____\                                             |
 
-[ weapon: [ type: Eldritch Staff, weight: HEAVY ]
-|       \ .,||,. /                                                 |
-|        \'//\\'/                                                  |
-|    =--+={{{}}}=+--=                                              |
-|         /\\//\                                                   |
-|        /  ||  \                                                  |
-|           ||                                                     |
-|           ||                                                     |
-|           ||                                                     |
-|           ||                                                     |
-|           ||                                                     |
-|           ||                                                     |
-|           ||                                                     |
-|           ||                                                     |
-|           ||                                                     |
-|           ||                                                     |
-|           ||                                                     |
+[ weapon: [ type: Cursed Dagger, weight: LIGHT ]
+|           /| ____________                                        |
+|       O|===|* >____________>                                     |
+|           \|                                                     |
 
 ]
