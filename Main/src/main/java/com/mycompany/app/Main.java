@@ -191,7 +191,7 @@ public class Main {
      */
     public static void pickWeapon(Character character, User user) {
         if (character instanceof Mage) {
-            try (BufferedReader reader = new BufferedReader(new FileReader("MageWeaponSelectionMenu.txt"))) {
+            try (BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\arist\\IdeaProjects\\FinalProject\\Medieval-Character-Creation\\Main\\src\\resources\\MageWeaponSelectionMenu.txt"))) {
                 String line;
                 while ((line = reader.readLine()) != null) {
                     System.out.println(line);
@@ -251,7 +251,7 @@ public class Main {
                 }
             }
         } else if (character instanceof Archer) {
-            try (BufferedReader reader = new BufferedReader(new FileReader("ArcheryWeaponSelectionMenu.txt"))) {
+            try (BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\arist\\IdeaProjects\\FinalProject\\Medieval-Character-Creation\\Main\\src\\resources\\ArcheryWeaponSelectionMenu.txt"))) {
                 String line;
                 while ((line = reader.readLine()) != null) {
                     System.out.println(line);
@@ -317,7 +317,7 @@ public class Main {
                 }
             }
         } else if (character instanceof Swordsman) {
-            try (BufferedReader reader = new BufferedReader(new FileReader("SwordSelectionMenu.txt"))) {
+            try (BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\arist\\IdeaProjects\\FinalProject\\Medieval-Character-Creation\\Main\\src\\resources\\SwordSelectionMenu.txt"))) {
                 String line;
                 while ((line = reader.readLine()) != null) {
                     System.out.println(line);
@@ -502,7 +502,7 @@ public class Main {
 
         user.characters.add(character);
 
-        try (FileWriter fw = new FileWriter("Characters.txt")) {
+        try (FileWriter fw = new FileWriter("C:\\Users\\arist\\IdeaProjects\\FinalProject\\Medieval-Character-Creation\\Main\\src\\resources\\Characters.txt")) {
             fw.write(user.toString());
         } catch (Exception e) {
             System.out.println("Failed to run.");
