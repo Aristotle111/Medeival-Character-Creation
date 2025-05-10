@@ -1,7 +1,6 @@
 package com.mycompany.app;
 
 import java.io.ByteArrayInputStream;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -10,7 +9,7 @@ import com.mycompany.app.Weapon.Damage;
 
 public class PickWeaponTest {
     /**
-     * makes sure that a character with the correct items is made
+     * checks to make sure that the code doesn't crash when confronted with an edge case, and makes sure that a character with
      */
     @Test
     void testBasicWeaponSelection() {
@@ -25,7 +24,7 @@ public class PickWeaponTest {
     }
 
     /**
-     * checks to make sure that the code doesn't crash when confronted with an edge case, and makes sure that a character with the correct items is made
+     * 
      */
     @Test
     void testInvalidInput() {
