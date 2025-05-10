@@ -1,9 +1,12 @@
-package com.mycompany.app;
+
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import com.mycompany.app.Main;
 
 public class UserSetupTest {
     /**

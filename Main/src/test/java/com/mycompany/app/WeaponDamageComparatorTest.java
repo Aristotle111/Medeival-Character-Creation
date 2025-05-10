@@ -17,7 +17,7 @@ public class WeaponDamageComparatorTest {
         }
         return character;
     }
-
+    
     @Test
     void compare_BothNull() {
         Character c1 = createCharacter("Gurt", null);
