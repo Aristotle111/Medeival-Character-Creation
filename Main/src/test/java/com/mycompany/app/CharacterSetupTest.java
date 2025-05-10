@@ -1,6 +1,8 @@
 package com.mycompany.app;
 
 import java.io.ByteArrayInputStream;
+
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class CharacterSetupTest {
